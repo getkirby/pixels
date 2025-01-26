@@ -132,8 +132,8 @@ createApp({
 			...presets[preset],
 		};
 
+		// select random pattern
 		if (newSettings.pattern === true) {
-
 			newSettings.pattern = Object.keys(patterns)[
 				Object.keys(patterns).length * Math.random() << 0
 			];
