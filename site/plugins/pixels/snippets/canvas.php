@@ -21,7 +21,7 @@
 		>
 			{{ settings.headline }}
 		</div>
-		<div v-if="settings.logo" class="editor-logo"><?= icon('icon') ?></div>
+		<div v-if="settings.logo" class="editor-logo"><?= $logo ?></div>
 	</header>
 
 	<div class="editor-image" :data-rounded="settings.rounded" :data-shadow="settings.shadow" :style="{
