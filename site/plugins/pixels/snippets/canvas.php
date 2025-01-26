@@ -3,7 +3,7 @@
 		width: settings.width + 'px',
 		height: settings.height + 'px',
 		color: settings.color,
-		transform: 'scale(' +  settings.zoom + ')'
+		transform: 'translate(-50%, -50%) scale(' +  settings.zoom + ')'
 	}">
 
 	<div
