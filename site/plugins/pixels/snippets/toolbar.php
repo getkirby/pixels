@@ -214,7 +214,7 @@
 				</div>
 				<div class="field">
 					<label class="label">Margins</label>
-					<div class="columns" style="--columns: 2; --gap: var(--spacing-1)">
+					<div class="columns" style="--columns: 4; --gap: var(--spacing-1)">
 						<input
 							class="input"
 							type="number"
