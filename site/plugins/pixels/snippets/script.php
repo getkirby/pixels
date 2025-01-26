@@ -50,6 +50,7 @@ const defaults = {
 const settings = reactive({
 	...defaults,
 	...presets.social,
+	zoom: 1,
 	get corners() {
 		const corners = {};
 
@@ -86,9 +87,12 @@ createApp({
 	isExporting: false,
 	async download() {
 		this.isExporting = true;
-		const canvas = document.querySelector(".editor-canvas");
+		const canvas = document.querySelector(".canvas");
+		const zoom = this.settings.zoom;
+		this.settings.zoom = 1;
 		const dataUrl = await toPng(canvas);
 		download(dataUrl, "pixels.png");
+		this.settings.zoom = zoom;
 		this.isExporting = false;
 	},
 	loadImage(file) {
@@ -136,7 +140,7 @@ createApp({
 }).mount();
 
 // handle toolbar groups toggling
-const groups = document.querySelectorAll(".editor-group");
+const groups = document.querySelectorAll(".toolbar-group");
 
 function toggleGroups(event) {
   if (event.target.open) {

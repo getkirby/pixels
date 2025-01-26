@@ -1,4 +1,4 @@
-<nav class="editor-toolbar">
+<nav class="toolbar">
 	<div v-cloak>
 		<div class="field mb-6">
 			<label for="presets" class="label">Presets</label>
@@ -14,7 +14,7 @@
 			</div>
 		</div>
 
-		<details class="editor-group" open>
+		<details class="toolbar-group" open>
 			<?php snippet('pixels/group-label', ['label' => 'Text']) ?>
 
 			<div>
@@ -74,7 +74,7 @@
 			</div>
 		</details>
 
-		<details class="editor-group">
+		<details class="toolbar-group">
 			<?php snippet('pixels/group-label', ['label' => 'Image']) ?>
 
 			<div>
@@ -135,7 +135,7 @@
 			</div>
 		</details>
 
-		<details class="editor-group">
+		<details class="toolbar-group">
 			<?php snippet('pixels/group-label', ['label' => 'Background']) ?>
 
 			<div>
@@ -168,7 +168,7 @@
 								v-if="settings.pattern !== ''"
 								type="button"
 								@click="settings.pattern = ''"
-								class="editor-patterns-cancel"
+								class="patterns-cancel"
 							>
 								<?= icon('cancel-small') ?>
 							</button>
@@ -193,7 +193,7 @@
 			</div>
 		</details>
 
-		<details class="editor-group">
+		<details class="toolbar-group">
 			<?php snippet('pixels/group-label', ['label' => 'Format']) ?>
 
 			<div>
@@ -257,7 +257,7 @@
 		</button>
 	</div>
 
-	<div class="editor-disclaimer">
+	<div class="disclaimer">
 		<strong>Kirby Pixels.</strong> Create social media thumbnails, plugin cards and more for <a href="https://getkirby.com">Kirby CMS</a> right in your browser.
 	</div>
 </nav>

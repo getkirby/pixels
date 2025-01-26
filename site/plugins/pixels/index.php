@@ -23,7 +23,8 @@ App::plugin(
 			'pixels/group-label' => __DIR__ . '/snippets/group-label.php',
 			'pixels/head'        => __DIR__ . '/snippets/head.php',
 			'pixels/script'      => __DIR__ . '/snippets/script.php',
-			'pixels/toolbar'     => __DIR__ . '/snippets/toolbar.php'
+			'pixels/toolbar'     => __DIR__ . '/snippets/toolbar.php',
+			'pixels/zoom'        => __DIR__ . '/snippets/zoom.php'
 		],
 		'templates' => [
 			'pixels' => __DIR__ . '/templates/pixels.php'

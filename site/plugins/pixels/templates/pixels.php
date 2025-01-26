@@ -5,13 +5,14 @@
 </head>
 <body>
 
-<div v-scope class="editor" @drop.prevent="onDrop">
+<div v-scope class="pixels" @drop.prevent="onDrop">
 	<?php snippet('pixels/toolbar') ?>
 
-	<div class="editor-main">
+	<main>
 		<?php snippet('pixels/exporter') ?>
 		<?php snippet('pixels/canvas') ?>
-	</div>
+		<?php snippet('pixels/zoom') ?>
+	</main>
 </div>
 
 <?php snippet('pixels/script') ?>
