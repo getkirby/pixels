@@ -113,6 +113,10 @@
 	border-radius: var(--rounded-sm);
 }
 
+.toolbar .range {
+	--range-thumb-size: 0.7rem;
+}
+
 .toolbar .select {
 	background: var(--color-white);
 	border-radius: var(--rounded-sm);

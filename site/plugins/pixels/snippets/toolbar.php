@@ -34,7 +34,7 @@
 					</label>
 				</div>
 
-				<div class="columns" style="--columns: 2; --gap: var(--spacing-1)">
+				<div class="columns mb-6" style="--columns: 2; --gap: var(--spacing-1)">
 					<div class="field">
 						<label class="label">Text Color</label>
 						<div class="colors">
@@ -65,7 +65,6 @@
 							/>
 						</div>
 					</div>
-
 					<div class="field">
 						<label>
 							<span class="label">Logo</span>
@@ -73,6 +72,19 @@
 								<input type="checkbox" name="logo" v-model="settings.logo">
 							</div>
 						</label>
+					</div>
+				</div>
+
+				<div class="field">
+					<label class="label">Font weight</label>
+					<div class="range">
+						<input
+							type="range"
+							v-model="settings.fontWeight"
+							min="200"
+							max="600"
+							step="100"
+						>
 					</div>
 				</div>
 			</div>

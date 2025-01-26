@@ -30,6 +30,7 @@ const defaults = {
 	background: colors.white,
 	browser: false,
 	color: "white",
+	fontWeight: 300,
 	headline: null,
 	image: "<?= $placeholder ?>",
 	logo: false,
@@ -70,9 +71,6 @@ const settings = reactive({
 
 		return corners;
 
-	},
-	get fontWeight() {
-		return this.color === "black" ? 400 : 300;
 	}
 });
 
