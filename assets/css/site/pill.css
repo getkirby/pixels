@@ -1,7 +1,0 @@
-.pill {
-	display: inline-flex;
-	align-items: center;
-	background: var(--color-light);
-	border-radius: 5rem;
-	padding: 0.25rem 1rem;
-}
