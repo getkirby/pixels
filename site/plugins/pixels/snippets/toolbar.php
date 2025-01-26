@@ -19,8 +19,15 @@
 
 			<div>
 				<div class="field mb-6">
-					<label class="label" for="headline">Headline</label>
-					<input class="input" id="headline" type="text" v-model="settings.headline">
+					<label>
+						<span class="label">Headline</span>
+						<input
+							class="input"
+							id="headline"
+							type="text"
+							v-model="settings.headline"
+						>
+					</label>
 				</div>
 
 				<div class="columns" style="--columns: 2; --gap: var(--spacing-1)">

@@ -18,6 +18,9 @@
 				color: settings.color,
 				fontWeight: settings.fontWeight
 			}"
+			spellcheck="false"
+			contenteditable="true"
+			@input="settings.headline = $event.target.innerText"
 		>
 			{{ settings.headline }}
 		</div>
