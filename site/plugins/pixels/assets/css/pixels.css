@@ -28,6 +28,12 @@ body {
 	gap: var(--spacing-12);
 }
 
+.editor-toolbar-description {
+	font-size: var(--text-xs);
+	margin-top: var(--spacing-1);
+	padding-inline: var(--spacing-2);
+}
+
 .editor-group {
 	border: 1px solid var(--color-border);
 	border-radius: var(--rounded);

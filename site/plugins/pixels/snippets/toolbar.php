@@ -12,7 +12,15 @@
 					</option>
 				</select>
 			</div>
+
+			<div
+				v-if="presets[settings.preset]?.description"
+				class="editor-toolbar-description"
+			>
+				{{ presets[settings.preset].description }}
+			</div>
 		</div>
+
 
 		<details class="editor-group" open>
 			<?php snippet('pixels/group-label', ['label' => 'Text']) ?>

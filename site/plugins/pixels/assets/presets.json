@@ -2,6 +2,7 @@
 	"social": {
 		"preset": "social",
 		"label": "Social media image",
+		"description": "Ideal for OpenGraph thumbnails for Mastodon, Bluesky or other platforms",
 		"background": "var(--color-black)",
 		"headline": "Kirby: The CMS that adapts to you",
 		"color": "white",
