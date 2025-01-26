@@ -158,10 +158,20 @@
 				</div>
 				<div class="field">
 					<label>
-						<span class="label">Pattern</span>
+						<span class="label">
+							Pattern
+							<button
+								v-if="settings.pattern !== ''"
+								type="button"
+								@click="settings.pattern = ''"
+								class="editor-patterns-cancel"
+							>
+								<?= icon('cancel-small') ?>
+							</button>
+						</span>
 
 						<div class="select">
-							<select @input="setPattern">
+							<select @input="settings.pattern = $event.target.value">
 								<option value="">
 									-
 								</option>
@@ -182,7 +192,7 @@
 		<details class="editor-group">
 			<?php snippet('pixels/group-label', ['label' => 'Format']) ?>
 
-			<div>x
+			<div>
 				<div class="field mb-6">
 					<label class="label">Dimensions</label>
 					<div class="columns" style="--columns: 2; --gap: var(--spacing-1)">

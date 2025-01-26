@@ -64,7 +64,9 @@ body {
 .editor-toolbar .label {
 	font-weight: var(--font-bold);
 	margin-bottom: var(--spacing-1);
-	display: block;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .editor-toolbar .input {
@@ -283,6 +285,10 @@ body {
 .editor-image img[data-x="center"][data-y="center"] {
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.editor-patterns-cancel {
+	color: var(--color-gray-600);
 }
 
 .editor-exporter {

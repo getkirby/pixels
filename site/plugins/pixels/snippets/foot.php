@@ -118,9 +118,6 @@ createApp({
 
 		reader.readAsDataURL(file);
 	},
-	setPattern(event) {
-		this.settings.pattern = event.target.value;
-	},
 	setPreset(event) {
 		const newSettings = {
 			...defaults,
