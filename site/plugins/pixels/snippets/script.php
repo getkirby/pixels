@@ -1,5 +1,3 @@
-<?= js($plugin->asset('js/download.js')) ?>
-
 <script type="module">
 import { toPng } from '<?= $plugin->asset('js/html-to-image.js')->mediaUrl() ?>';
 import { createApp, reactive } from '<?= $plugin->asset('js/petite-vue.js')->mediaUrl() ?>';
@@ -89,8 +87,10 @@ createApp({
 		const canvas = document.querySelector(".canvas");
 		const zoom = this.settings.zoom;
 		this.settings.zoom = 1;
-		const dataUrl = await toPng(canvas);
-		download(dataUrl, "pixels.png");
+		const link = document.createElement("a");
+		link.href = await toPng(canvas);
+		link.download = "pixels.png";
+		link.click();
 		this.settings.zoom = zoom;
 		this.isExporting = false;
 	},
