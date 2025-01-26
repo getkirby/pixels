@@ -48,8 +48,13 @@
 			</div>
 		</template>
 		<template v-if="settings.image">
-			<div class="editor-image-wrapper">
-				<img :data-y="settings.position.y" :data-x="settings.position.x" :src="settings.image" :style="{ width: settings.scale + '%' }">
+			<div class="editor-image-wrapper" @dblclick="selectImage">
+				<img
+					:data-y="settings.position.y"
+					:data-x="settings.position.x"
+					:src="settings.image"
+					:style="{ width: settings.scale + '%' }"
+				>
 			</div>
 		</template>
 	</div>

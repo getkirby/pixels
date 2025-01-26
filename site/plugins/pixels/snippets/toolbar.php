@@ -82,7 +82,11 @@
 					<div class="upload">
 						<label>
 							Select …
-							<input type="file" accept="image/*" @input="onUpload">
+							<input
+								type="file"
+								accept="image/*"
+								@input="onUpload"
+							>
 						</label>
 					</div>
 				</div>
@@ -248,7 +252,7 @@
 			</div>
 		</details>
 
-		<button class="btn" @click="exportImage">
+		<button class="btn" @click="download">
 			<?= icon('download') ?> Export
 		</button>
 	</div>

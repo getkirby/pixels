@@ -84,28 +84,14 @@ createApp({
 	presets,
 	settings,
 	isExporting: false,
-	async exportImage() {
+	async download() {
 		this.isExporting = true;
 		const canvas = document.querySelector(".editor-canvas");
 		const dataUrl = await toPng(canvas);
 		download(dataUrl, "pixels.png");
 		this.isExporting = false;
 	},
-	onDrop(event) {
-		if (!event.dataTransfer.files || event.dataTransfer.files.length === 0) {
-			return;
-		}
-
-		this.selectFile(event.dataTransfer.files[0]);
-	},
-	onUpload(event) {
-		if (!event.target.files || event.target.files.length === 0) {
-			return;
-		}
-
-		this.selectFile(event.target.files[0]);
-	},
-	selectFile(file) {
+	loadImage(file) {
 		const reader = new FileReader();
 
 		if (file.type.startsWith("image/") === false) {
@@ -117,6 +103,25 @@ createApp({
 		};
 
 		reader.readAsDataURL(file);
+	},
+	onDrop(event) {
+		if (!event.dataTransfer.files || event.dataTransfer.files.length === 0) {
+			return;
+		}
+
+		this.loadImage(event.dataTransfer.files[0]);
+	},
+	onUpload(event) {
+		if (!event.target.files || event.target.files.length === 0) {
+			return;
+		}
+
+		this.loadImage(event.target.files[0]);
+	},
+	selectImage() {
+		const input = document.querySelector(".upload input");
+		input?.click();
+
 	},
 	setPreset(event) {
 		const newSettings = {

@@ -20,9 +20,9 @@ App::plugin(
 		'snippets' => [
 			'pixels/canvas'      => __DIR__ . '/snippets/canvas.php',
 			'pixels/exporter'    => __DIR__ . '/snippets/exporter.php',
-			'pixels/foot'        => __DIR__ . '/snippets/foot.php',
 			'pixels/group-label' => __DIR__ . '/snippets/group-label.php',
 			'pixels/head'        => __DIR__ . '/snippets/head.php',
+			'pixels/script'      => __DIR__ . '/snippets/script.php',
 			'pixels/toolbar'     => __DIR__ . '/snippets/toolbar.php'
 		],
 		'templates' => [

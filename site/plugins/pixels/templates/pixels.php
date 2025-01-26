@@ -14,7 +14,7 @@
 	</div>
 </div>
 
-<?php snippet('pixels/foot') ?>
+<?php snippet('pixels/script') ?>
 
 </body>
 </html>
