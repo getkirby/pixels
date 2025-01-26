@@ -19,8 +19,6 @@ window.addEventListener("dragexit", preventDefault, false);
 window.addEventListener("dragleave", preventDefault, false);
 window.addEventListener("drop", preventDefault, false);
 
-const placeholder = "/assets/panel.png";
-
 const colors = {
 	white: "var(--color-white)",
 	light: "var(--color-light)",
@@ -85,7 +83,7 @@ const defaults = {
 	browser: false,
 	color: "white",
 	headline: null,
-	image: placeholder,
+	image: "<?= $placeholder ?>",
 	logo: false,
 	mt: 0,
 	mr: 0,
@@ -147,7 +145,6 @@ const settings = reactive({
 createApp({
 	colors,
 	patterns,
-	placeholder,
 	positions,
 	presets,
 	settings,
