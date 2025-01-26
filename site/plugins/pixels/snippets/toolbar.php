@@ -13,10 +13,12 @@
 				</select>
 			</div>
 		</div>
+
 		<div class="field">
 			<label class="label">Headline</label>
 			<input class="input" type="text" v-model="settings.headline">
 		</div>
+
 		<div class="columns mb-3" style="--columns: 2; --gap: var(--spacing-1)">
 			<div class="field">
 				<label class="label">Logo</label>
@@ -31,6 +33,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="field">
 			<label class="label">Image</label>
 			<div class="upload">
@@ -52,6 +55,7 @@
 				</li>
 			</ul>
 		</div>
+
 		<div class="columns" style="--columns: 2; --gap: var(--spacing-1)">
 			<div class="field">
 				<label class="label">Shadow</label>
@@ -66,6 +70,7 @@
 				</div>
 			</div>
 		</div>
+
 		<div class="field">
 			<label class="label">Background</label>
 			<div class="colors">
@@ -78,6 +83,13 @@
 				>
 					<span></span>
 				</button>
+				<input
+				  type="color"
+					:aria-selected="Object.values(colors).includes(settings.background) === false"
+					value="#d9e8f7"
+					class="color-custom"
+					@input="settings.background = $event.target.value"
+				/>
 			</div>
 		</div>
 		<div class="field">
@@ -97,6 +109,7 @@
 				</select>
 			</div>
 		</div>
+
 		<div class="field">
 			<label class="label">Text Color</label>
 			<div class="colors">
@@ -116,8 +129,18 @@
 				>
 					<span></span>
 				</button>
+
+				<input
+					ref="customTextColor"
+				  type="color"
+					:aria-selected="['white', 'black'].includes(settings.color) === false"
+					value="#63a1de"
+					class="color-custom"
+					@input="settings.color = $event.target.value"
+				/>
 			</div>
 		</div>
+
 		<div class="field">
 			<label class="label">Dimensions</label>
 			<div class="columns" style="--columns: 2; --gap: var(--spacing-1)">
@@ -170,6 +193,7 @@
 				>
 			</div>
 		</div>
+
 		<button class="btn" @click="exportImage">
 			<?= icon('download') ?> Export
 		</button>

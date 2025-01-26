@@ -2,23 +2,10 @@
 
 <script type="module">
 import { toPng } from '<?= $plugin->asset('js/html-to-image.js')->mediaUrl() ?>';
+import { createApp, reactive } from '<?= $plugin->asset('js/petite-vue.js')->mediaUrl() ?>';
 
-import {
-	createApp,
-	reactive
-} from '<?= $plugin->asset('js/petite-vue.js')->mediaUrl() ?>';
-
-const preventDefault = (e) => {
-	e.stopPropagation();
-	e.preventDefault();
-};
-
-window.addEventListener("dragenter", preventDefault, false);
-window.addEventListener("dragover", preventDefault, false);
-window.addEventListener("dragexit", preventDefault, false);
-window.addEventListener("dragleave", preventDefault, false);
-window.addEventListener("drop", preventDefault, false);
-
+const patterns = <?php echo json_encode($patterns) ?>;
+const presets = JSON.parse(`<?= $presets ?>`);
 const colors = {
 	white: "var(--color-white)",
 	light: "var(--color-light)",
@@ -28,55 +15,16 @@ const colors = {
 };
 
 const positions = {
-	topLeft: {
-		y: "top",
-		x: "left",
-		arrow: "↘"
-	},
-	topCenter: {
-		y: "top",
-		x: "center",
-		arrow: "↓"
-	},
-	topRight: {
-		y: "top",
-		x: "right",
-		arrow: "↙"
-	},
-	centerLeft: {
-		y: "center",
-		x: "left",
-		arrow: "→"
-	},
-	centerCenter: {
-		y: "center",
-		x: "center",
-		arrow: "↔"
-	},
-	centerRight: {
-		y: "center",
-		x: "right",
-		arrow: "←"
-	},
-	bottomLeft: {
-		y: "bottom",
-		x: "left",
-		arrow: "↗"
-	},
-	bottomCenter: {
-		y: "bottom",
-		x: "center",
-		arrow: "↑"
-	},
-	bottomRight: {
-		y: "bottom",
-		x: "right",
-		arrow: "↖"
-	},
+	topLeft:      { y: "top",    x: "left",   arrow: "↘" },
+	topCenter:    { y: "top",    x: "center", arrow: "↓" },
+	topRight:     { y: "top",    x: "right",  arrow: "↙" },
+	centerLeft:   { y: "center", x: "left",   arrow: "→" },
+	centerCenter: { y: "center", x: "center", arrow: "↔" },
+	centerRight:  { y: "center", x: "right",  arrow: "←" },
+	bottomLeft:   { y: "bottom", x: "left",   arrow: "↗" },
+	bottomCenter: { y: "bottom", x: "center", arrow: "↑" },
+	bottomRight:  { y: "bottom", x: "right",  arrow: "↖" },
 };
-
-const patterns = <?php echo json_encode($patterns) ?>;
-const presets = JSON.parse(`<?= $presets ?>`);
 
 const defaults = {
 	background: colors.white,
@@ -103,35 +51,21 @@ const settings = reactive({
 	...defaults,
 	...presets.social,
 	get corners() {
-		if (this.rounded === false) {
-			return {};
-		}
+		const corners = {};
 
-		let corners = {
-			borderTopLeftRadius: "7px",
-			borderTopRightRadius: "7px",
-			borderBottomLeftRadius: "7px",
-			borderBottomRightRadius: "7px",
-		};
-
-		if (this.mt === 0) {
-			delete corners.borderTopLeftRadius;
-			delete corners.borderTopRightRadius;
-		}
-
-		if (this.mr === 0) {
-			delete corners.borderTopRightRadius;
-			delete corners.borderBottomRightRadius;
-		}
-
-		if (this.ml === 0) {
-			delete corners.borderTopLeftRadius;
-			delete corners.borderBottomLeftRadius;
-		}
-
-		if (this.mb === 0) {
-			delete corners.borderBottomLeftRadius;
-			delete corners.borderBottomRightRadius;
+		if (this.rounded === true) {
+			if (this.mt !== 0 && this.ml !== 0) {
+				corners.borderTopLeftRadius = "7px";
+			}
+			if (this.mt !== 0 && this.mr !== 0) {
+				corners.borderTopRightRadius = "7px";
+			}
+			if (this.mb !== 0 && this.ml !== 0) {
+				corners.borderBottomLeftRadius = "7px";
+			}
+			if (this.mb !== 0 && this.mr !== 0) {
+				corners.borderBottomRightRadius = "7px";
+			}
 		}
 
 		return corners;
@@ -142,6 +76,7 @@ const settings = reactive({
 	}
 });
 
+// create vue-petite app
 createApp({
 	colors,
 	patterns,
@@ -197,4 +132,16 @@ createApp({
 		}
 	}
 }).mount();
+
+// prevent default drag events
+const preventDefault = (e) => {
+	e.stopPropagation();
+	e.preventDefault();
+};
+
+window.addEventListener("dragenter", preventDefault, false);
+window.addEventListener("dragover", preventDefault, false);
+window.addEventListener("dragexit", preventDefault, false);
+window.addEventListener("dragleave", preventDefault, false);
+window.addEventListener("drop", preventDefault, false);
 </script>

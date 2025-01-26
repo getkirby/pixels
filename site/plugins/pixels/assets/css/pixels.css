@@ -36,6 +36,7 @@ body {
 .editor-toolbar .input {
 	font-size: var(--text-sm);
 	padding: 0.25rem 0.5rem;
+	border-radius: var(--rounded-sm);
 }
 
 .editor-toolbar .upload {
@@ -75,22 +76,25 @@ body {
 .editor-toolbar .checkbox {
 	background: var(--color-white);
 	padding: 0.25rem 0.5rem;
+	border-radius: var(--rounded-sm);
 }
 
 .editor-toolbar .range {
 	line-height: 0;
 	background: var(--color-white);
 	padding: 0.25rem 0.5rem;
+	border-radius: var(--rounded-sm);
 }
 
 .editor-toolbar .select {
 	background: var(--color-white);
+	border-radius: var(--rounded-sm);
 }
 
 .editor-toolbar .select select {
 	border: none;
 	font-family: inherit;
-	padding: 0.25rem 2rem 0.25rem 0.5rem;
+	padding: var(--spacing-1) 2rem var(--spacing-1) var(--spacing-2);
 }
 
 .editor-toolbar input[type="range"] {
@@ -101,21 +105,26 @@ body {
 	display: flex;
 	gap: 2px;
 }
-
 .editor-toolbar .colors button {
-	padding: 0.25rem;
+	padding: var(--spacing-1);
 	background: var(--color-white);
+	border-radius: var(--rounded-sm);
 }
-
-.editor-toolbar .colors button[aria-selected="true"] {
-	outline: 2px solid var(--color-blue-700);
-}
-
 .editor-toolbar .colors button span {
 	display: block;
 	background: var(--color);
 	width: 1.25rem;
 	height: 1.25rem;
+}
+.editor-toolbar .color-custom {
+	width: 1.75rem;
+	height: 1.75rem;
+	border: var(--spacing-1) solid var(--color-white);
+	border-radius: var(--rounded-sm);
+	margin-inline-start: var(--spacing-3);
+}
+.editor-toolbar :where(.colors button, .color-custom)[aria-selected="true"] {
+	outline: 2px solid var(--color-blue-700);
 }
 
 .editor-toolbar .btn {
