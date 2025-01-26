@@ -1,3 +1,3 @@
 <div v-cloak v-if="isExporting" class="exporter">
-	<p>Exporting …</p>
+	<p>Preparing …</p>
 </div>

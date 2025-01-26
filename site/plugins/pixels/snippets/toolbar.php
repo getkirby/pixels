@@ -257,7 +257,7 @@
 		</details>
 
 		<button class="btn" @click="download">
-			<?= icon('download') ?> Export
+			<?= icon('download') ?> Download
 		</button>
 	</div>
 
