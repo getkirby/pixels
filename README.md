@@ -1,8 +1,8 @@
 # Kirby Pixels
 
-[![Kirby Pixels](https://github.com/user-attachments/assets/e7ab7cab-736d-450c-b5f9-3c5b3ba118ac)](https://pxels.getkirby.com)
+[![Kirby Pixels](https://github.com/user-attachments/assets/e7ab7cab-736d-450c-b5f9-3c5b3ba118ac)](https://pixels.getkirby.com)
 
-[Kirby Pixels](https://pxels.getkirby.com) is a simple yet powerful tool for creating social media thumbnails, plugin cards, showcase screens and more. With presets right for your [Kirby CMS](https://getkirby.com) project, all inside your browser. No design skills or extra software needed: just customize and download.
+[Kirby Pixels](https://pixels.getkirby.com) is a simple yet powerful tool for creating social media thumbnails, plugin cards, showcase screens and more. With presets right for your [Kirby CMS](https://getkirby.com) project, all inside your browser. No design skills or extra software needed: just customize and download.
 
 ### Features
 - Predefined presets – Quickly create visuals in consistent styles
