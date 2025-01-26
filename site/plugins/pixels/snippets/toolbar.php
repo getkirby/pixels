@@ -3,7 +3,11 @@
 		<div class="field mb-6">
 			<label for="presets" class="label">Presets</label>
 			<div class="select">
-				<select id="presets" :value="settings.preset" @input="setPreset">
+				<select
+					id="presets"
+					:value="settings.preset"
+					@input="setPreset($event.target.value)"
+				>
 					<option
 						v-for="(preset, id) in presets"
 						:value="id"

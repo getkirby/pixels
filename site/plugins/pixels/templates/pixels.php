@@ -3,19 +3,18 @@
 <head>
 	<?php snippet('pixels/head') ?>
 </head>
+
 <body>
+	<div v-scope class="pixels" @drop.prevent="onDrop">
+		<?php snippet('pixels/toolbar') ?>
 
-<div v-scope class="pixels" @drop.prevent="onDrop">
-	<?php snippet('pixels/toolbar') ?>
+		<main @mounted="setPreset('social')">
+			<?php snippet('pixels/exporter') ?>
+			<?php snippet('pixels/canvas') ?>
+			<?php snippet('pixels/zoom') ?>
+		</main>
+	</div>
 
-	<main>
-		<?php snippet('pixels/exporter') ?>
-		<?php snippet('pixels/canvas') ?>
-		<?php snippet('pixels/zoom') ?>
-	</main>
-</div>
-
-<?php snippet('pixels/script') ?>
-
+	<?php snippet('pixels/script') ?>
 </body>
 </html>

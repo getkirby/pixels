@@ -49,7 +49,6 @@ const defaults = {
 
 const settings = reactive({
 	...defaults,
-	...presets.social,
 	zoom: 1,
 	get corners() {
 		const corners = {};
@@ -127,11 +126,18 @@ createApp({
 		input?.click();
 
 	},
-	setPreset(event) {
+	setPreset(preset) {
 		const newSettings = {
 			...defaults,
-			...presets[event.target.value],
+			...presets[preset],
 		};
+
+		if (newSettings.pattern === true) {
+
+			newSettings.pattern = Object.keys(patterns)[
+				Object.keys(patterns).length * Math.random() << 0
+			];
+		}
 
 		for (const key in newSettings) {
 			this.settings[key] = newSettings[key];

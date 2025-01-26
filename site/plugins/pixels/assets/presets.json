@@ -11,7 +11,7 @@
 		"ml": 6,
 		"width": 1200,
 		"height": 630,
-		"pattern": "pinkblue",
+		"pattern": true,
 		"rounded": true,
 		"shadow": true
 	},
@@ -29,7 +29,7 @@
 		"mb": 0,
 		"width": 960,
 		"height": 160,
-		"pattern": "pinkblue",
+		"pattern": true,
 		"rounded": false,
 		"shadow": false
 	},
