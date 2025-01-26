@@ -1,0 +1,24 @@
+.brands {
+	--columns: 2;
+
+	display: grid;
+	grid-template-columns: repeat(var(--columns), 1fr);
+	grid-row-gap: var(--spacing-12);
+	grid-column-gap: var(--spacing-16);
+	align-items: center;
+}
+@media screen and (min-width: 30rem) {
+	.brands {
+		--columns: 3;
+	}
+}
+@media screen and (min-width: 54rem) {
+	.brands {
+		--columns: var(--brands-columns, 6);
+	}
+}
+.brands svg {
+	width: 100%;
+	height: auto;
+	max-height: 2.5rem;
+}
