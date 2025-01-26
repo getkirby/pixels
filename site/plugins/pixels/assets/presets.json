@@ -1,0 +1,78 @@
+{
+	"social": {
+		"preset": "social",
+		"label": "Social media image",
+		"background": "var(--color-black)",
+		"headline": "Kirby: The CMS that adapts to you",
+		"color": "white",
+		"logo": true,
+		"mt": 10,
+		"mr": 6,
+		"ml": 6,
+		"width": 1200,
+		"height": 630,
+		"pattern": "pinkblue",
+		"rounded": true,
+		"shadow": true
+	},
+	"kosmos": {
+		"preset": "kosmos",
+		"label": "Kosmos Banner",
+		"background": "var(--color-black)",
+		"headline": "Kirby",
+		"image": false,
+		"color": "white",
+		"logo": true,
+		"mt": 0,
+		"mr": 0,
+		"ml": 0,
+		"mb": 0,
+		"width": 960,
+		"height": 160,
+		"pattern": "pinkblue",
+		"rounded": false,
+		"shadow": false
+	},
+	"viewPlugin": {
+		"preset": "viewPlugin",
+		"label": "Panel view plugin",
+		"background": "#5d6166",
+		"mt": 6,
+		"ml": 6,
+		"rounded": true,
+		"shadow": true
+	},
+	"fieldPlugin": {
+		"preset": "fieldPlugin",
+		"label": "Panel field plugin",
+		"background": "var(--color-light)",
+		"mt": 4,
+		"ml": 4,
+		"mr": 4,
+		"rounded": false,
+		"shadow": false
+	},
+	"fullscreen": {
+		"preset": "fullscreen",
+		"label": "Fullscreen",
+		"background": "#5d6166"
+	},
+	"logo": {
+		"preset": "logo",
+		"label": "Plugin logo",
+		"background": "var(--color-white)",
+		"mt": 1,
+		"ml": 1,
+		"mr": 1,
+		"mb": 1,
+		"width": 128,
+		"height": 128
+	},
+	"showcase": {
+		"preset": "showcase",
+		"label": "Showcase",
+		"background": "#5d6166",
+		"width": 600,
+		"height": 800
+	}
+}

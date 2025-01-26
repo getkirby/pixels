@@ -1,0 +1,35 @@
+.tabs {
+	margin-block: var(--spacing-6);
+	border: 1px solid var(--color-border);
+	border-radius: var(--rounded);
+}
+
+.tabs nav {
+	display: flex;
+	overflow-x: auto;
+}
+
+.tabs nav button {
+	position: relative;
+	padding: var(--spacing-2) var(--spacing-3);
+	font-size: var(--text-xs);
+	overflow: visible;
+	white-space: nowrap;
+}
+
+.tabs nav button[aria-selected="true"]::after {
+	position: absolute;
+	content: "";
+	height: 2px;
+	inset-inline: 0;
+	bottom: 0;
+	background: currentColor;
+}
+
+.tabs nav button:not([aria-selected="true"]):hover {
+	opacity: 0.75;
+}
+
+.tabs > div {
+	padding: var(--spacing-6);
+}

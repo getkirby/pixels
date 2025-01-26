@@ -1,0 +1,272 @@
+[v-cloak] {
+	display: none;
+}
+
+html,
+body {
+	height: 100%;
+	overflow: hidden;
+}
+
+.editor {
+	display: grid;
+	height: 100%;
+	grid-template-columns: 20rem 2fr;
+}
+
+.editor-toolbar {
+	background: var(--color-light);
+	accent-color: var(--color-blue-700);
+	padding: 1.5rem;
+	font-size: var(--text-sm);
+	max-height: 100%;
+	overflow: auto;
+}
+
+.editor-toolbar .field {
+	margin-bottom: var(--spacing-6);
+}
+
+.editor-toolbar .label {
+	font-weight: var(--font-bold);
+	margin-bottom: var(--spacing-1);
+	display: block;
+}
+
+.editor-toolbar .input {
+	font-size: var(--text-sm);
+	padding: 0.25rem 0.5rem;
+}
+
+.editor-toolbar .upload {
+	position: relative;
+	background: var(--color-white);
+	padding: 0.25rem 0.5rem;
+}
+
+.editor-toolbar .upload input {
+	position: absolute;
+	inset: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.editor-toolbar .inputs {
+	display: grid;
+	grid-template-columns: 1;
+	grid-gap: 2px;
+}
+
+.editor-toolbar .inputs li {
+	padding: 0.25rem 0.5rem;
+	background: var(--color-white);
+}
+
+.editor-toolbar .inputs label {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.editor-toolbar .inputs input {
+	margin-right: 0.5rem;
+}
+
+.editor-toolbar .checkbox {
+	background: var(--color-white);
+	padding: 0.25rem 0.5rem;
+}
+
+.editor-toolbar .range {
+	line-height: 0;
+	background: var(--color-white);
+	padding: 0.25rem 0.5rem;
+}
+
+.editor-toolbar .select {
+	background: var(--color-white);
+}
+
+.editor-toolbar .select select {
+	border: none;
+	font-family: inherit;
+	padding: 0.25rem 2rem 0.25rem 0.5rem;
+}
+
+.editor-toolbar input[type="range"] {
+	width: 100%;
+}
+
+.editor-toolbar .colors {
+	display: flex;
+	gap: 2px;
+}
+
+.editor-toolbar .colors button {
+	padding: 0.25rem;
+	background: var(--color-white);
+}
+
+.editor-toolbar .colors button[aria-selected="true"] {
+	outline: 2px solid var(--color-blue-700);
+}
+
+.editor-toolbar .colors button span {
+	display: block;
+	background: var(--color);
+	width: 1.25rem;
+	height: 1.25rem;
+}
+
+.editor-toolbar .btn {
+	border: 2px solid currentColor;
+	width: 100%;
+	padding: 0.25rem;
+	border-radius: var(--rounded);
+}
+
+.editor-main {
+	position: relative;
+	display: grid;
+	place-items: center;
+}
+
+.editor-canvas {
+	position: relative;
+	background-color: var(--color-light);
+	overflow: hidden;
+	color: var(--color-white);
+}
+
+.editor-pattern {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center center;
+	opacity: 0.625;
+}
+
+.editor-header {
+	position: absolute;
+	top: 4rem;
+	left: 6rem;
+	right: 6rem;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.editor-headline {
+	font-weight: 600;
+	font-size: 3rem;
+	flex-grow: 1;
+	margin-right: 1.5rem;
+}
+
+.editor-logo svg {
+	--size: 4rem;
+	width: var(--size);
+	height: var(--size);
+}
+
+.editor-logo svg * {
+	fill: currentColor;
+}
+
+.editor-image {
+	--rounded: 7px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.editor-image[data-shadow="true"] {
+	filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.5));
+}
+
+.editor-browser {
+	flex-shrink: 0;
+	z-index: 1;
+}
+
+.editor-image-wrapper {
+	position: relative;
+	flex-grow: 1;
+}
+
+.editor-image img {
+	position: absolute;
+	max-width: none;
+	object-fit: cover;
+	object-position: top center;
+}
+
+.editor-image img[data-x="left"] {
+	left: 0;
+}
+
+.editor-image img[data-x="center"] {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.editor-image img[data-x="right"] {
+	right: 0;
+}
+
+.editor-image img[data-y="top"] {
+	top: 0;
+}
+
+.editor-image img[data-y="center"] {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.editor-image img[data-y="bottom"] {
+	bottom: 0;
+}
+
+.editor-image img[data-x="center"][data-y="center"] {
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.editor-exporter {
+	position: fixed;
+	inset: 0;
+	background: rgba(255, 255, 255, 0.6);
+	z-index: 1;
+	display: grid;
+	place-items: center;
+}
+
+.editor-exporter p {
+	background: white;
+	box-shadow: var(--shadow-xl);
+	padding: 1rem 2rem;
+	font-weight: var(--font-bold);
+	border-radius: var(--rounded);
+}
+
+[data-preset="kosmos"] .editor-header {
+	justify-content: center;
+	inset: 0;
+	gap: 1.5rem;
+}
+[data-preset="kosmos"] .editor-headline {
+	flex-grow: 0;
+	width: max-content;
+	order: 2;
+	font-weight: 700 !important;
+}
+[data-preset="kosmos"] .editor-headline input {
+	appearance: none;
+	width: 12rem !important;
+}
