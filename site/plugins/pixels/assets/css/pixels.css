@@ -23,6 +23,12 @@ body {
 	overflow: auto;
 }
 
+.editor-toolbar {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .editor-group {
 	border: 1px solid var(--color-border);
 	border-radius: var(--rounded);
@@ -322,4 +328,8 @@ body {
 [data-preset="kosmos"] .editor-headline input {
 	appearance: none;
 	width: 12rem !important;
+}
+
+.editor-disclaimer a {
+	text-decoration: underline;
 }

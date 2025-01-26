@@ -252,4 +252,8 @@
 			<?= icon('download') ?> Export
 		</button>
 	</div>
+
+	<div class="editor-disclaimer">
+		<strong>Kirby Pixels.</strong> Create social media thumbnails, plugin cards and more for <a href="https://getkirby.com">Kirby CMS</a> right in your browser.
+	</div>
 </nav>
