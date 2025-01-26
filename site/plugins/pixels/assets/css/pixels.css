@@ -115,6 +115,7 @@ body {
 	background: var(--color);
 	width: 1.25rem;
 	height: 1.25rem;
+	border-radius: var(--rounded-sm);
 }
 .editor-toolbar .color-custom {
 	width: 1.75rem;
@@ -122,6 +123,9 @@ body {
 	border: var(--spacing-1) solid var(--color-white);
 	border-radius: var(--rounded-sm);
 	margin-inline-start: var(--spacing-3);
+}
+.editor-toolbar .color-custom::-webkit-color-swatch-wrapper {
+	padding: 0;
 }
 .editor-toolbar :where(.colors button, .color-custom)[aria-selected="true"] {
 	outline: 2px solid var(--color-blue-700);
