@@ -22,12 +22,10 @@ body {
 	max-height: 100%;
 	overflow: auto;
 	box-shadow: var(--shadow);
-}
-
-.editor-toolbar {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	gap: var(--spacing-12);
 }
 
 .editor-group {
