@@ -2,7 +2,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title><?= $site->title() ?></title>
+<title><?= $site->titel() ?></title>
 
 <?= css('assets/css/index.css') ?>
 <?= css($plugin->asset('css/pixels.css')) ?>
