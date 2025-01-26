@@ -133,6 +133,22 @@ createApp({
 	}
 }).mount();
 
+// handle toolbar groups toggling
+const groups = document.querySelectorAll(".editor-group");
+
+function toggleGroups(event) {
+  if (event.target.open) {
+		for (const group of groups) {
+			group.open = group === event.target;
+		}
+	}
+}
+
+// Add toggle listeners.
+for (const group of groups) {
+  group.addEventListener("toggle", toggleGroups);
+}
+
 // prevent default drag events
 const preventDefault = (e) => {
 	e.stopPropagation();

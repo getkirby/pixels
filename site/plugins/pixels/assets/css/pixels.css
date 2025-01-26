@@ -23,7 +23,41 @@ body {
 	overflow: auto;
 }
 
-.editor-toolbar .field {
+.editor-group {
+	border: 1px solid var(--color-border);
+	border-radius: var(--rounded);
+}
+.editor-group summary {
+	list-style: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 500;
+	padding: var(--spacing-1) var(--spacing-2);
+	border-radius: var(--rounded);
+}
+.editor-group summary::-webkit-details-marker {
+	display: none;
+}
+.editor-group[open] summary svg:first-of-type {
+	display: none;
+}
+.editor-group:not([open]) summary svg:last-of-type {
+	display: none;
+}
+.editor-group[open] summary {
+	border-bottom: 1px solid var(--color-border);
+	padding-bottom: var(--spacing-1);
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.editor-group > div {
+	padding: var(--spacing-2) var(--spacing-2) var(--spacing-3);
+}
+.editor-group + .editor-group {
+	margin-top: var(--spacing-2);
+}
+.editor-group:last-of-type {
 	margin-bottom: var(--spacing-6);
 }
 
@@ -59,7 +93,7 @@ body {
 }
 
 .editor-toolbar .inputs li {
-	padding: 0.25rem 0.5rem;
+	padding: var(--spacing-1) var(--spacing-2);
 	background: var(--color-white);
 }
 
@@ -70,13 +104,14 @@ body {
 }
 
 .editor-toolbar .inputs input {
-	margin-right: 0.5rem;
+	margin-right: var(--spacing-2);
 }
 
 .editor-toolbar .checkbox {
 	background: var(--color-white);
-	padding: 0.25rem 0.5rem;
+	padding: var(--spacing-1) var(--spacing-2);
 	border-radius: var(--rounded-sm);
+	line-height: 1;
 }
 
 .editor-toolbar .range {
@@ -122,7 +157,6 @@ body {
 	height: 1.75rem;
 	border: var(--spacing-1) solid var(--color-white);
 	border-radius: var(--rounded-sm);
-	margin-inline-start: var(--spacing-3);
 }
 .editor-toolbar .color-custom::-webkit-color-swatch-wrapper {
 	padding: 0;

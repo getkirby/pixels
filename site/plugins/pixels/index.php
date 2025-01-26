@@ -18,11 +18,12 @@ App::plugin(
 			'pixels' => PixelsPage::class
 		],
 		'snippets' => [
-			'pixels/canvas'   => __DIR__ . '/snippets/canvas.php',
-			'pixels/exporter' => __DIR__ . '/snippets/exporter.php',
-			'pixels/foot'     => __DIR__ . '/snippets/foot.php',
-			'pixels/head'     => __DIR__ . '/snippets/head.php',
-			'pixels/toolbar'  => __DIR__ . '/snippets/toolbar.php'
+			'pixels/canvas'      => __DIR__ . '/snippets/canvas.php',
+			'pixels/exporter'    => __DIR__ . '/snippets/exporter.php',
+			'pixels/foot'        => __DIR__ . '/snippets/foot.php',
+			'pixels/group-label' => __DIR__ . '/snippets/group-label.php',
+			'pixels/head'        => __DIR__ . '/snippets/head.php',
+			'pixels/toolbar'     => __DIR__ . '/snippets/toolbar.php'
 		],
 		'templates' => [
 			'pixels' => __DIR__ . '/templates/pixels.php'
