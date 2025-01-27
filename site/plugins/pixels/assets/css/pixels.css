@@ -11,13 +11,11 @@ body {
 .pixels {
 	display: grid;
 	height: 100%;
-	grid-template-columns: 20rem 2fr;
+	grid-template-columns: 20rem 1fr;
 }
 
 main {
 	position: relative;
-	display: grid;
-	place-items: center;
 }
 
 .exporter {

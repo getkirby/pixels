@@ -1,5 +1,6 @@
 .canvas {
-	position: relative;
+	position: absolute;
+	inset: 50% 50%;
 	background-color: var(--color-light);
 	overflow: hidden;
 	color: var(--color-white);
