@@ -1,1 +1,5 @@
 Titel: Kirby Pixels
+
+----
+
+Description: Create social media thumbnails, plugin cards and more for Kirby CMS right in your browser.
