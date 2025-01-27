@@ -88,7 +88,13 @@ createApp({
 		const zoom = this.settings.zoom;
 		this.settings.zoom = 1;
 		const link = document.createElement("a");
+
+		// stupid workaround fix for Safari, calling toPng multiple times
+		// https://github.com/bubkoo/html-to-image/issues/361
+		await toPng(canvas);
+		await toPng(canvas);
 		link.href = await toPng(canvas);
+
 		link.download = "pixels.png";
 		link.click();
 		this.settings.zoom = zoom;
