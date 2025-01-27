@@ -1,9 +1,13 @@
 .canvas {
-	position: absolute;
-	inset: 50% 50%;
+	color: var(--color-white);
 	background-color: var(--color-light);
 	overflow: hidden;
-	color: var(--color-white);
+}
+
+.canvas-wrapper {
+	position: absolute;
+	inset: 50% 50%;
+	transform: translate(-50%, -50%);
 }
 
 .canvas-pattern {
