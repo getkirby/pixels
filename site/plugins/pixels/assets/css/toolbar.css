@@ -1,7 +1,7 @@
 .toolbar {
 	background: var(--color-light);
 	accent-color: var(--color-blue-700);
-	padding: 1.5rem;
+	padding: var(--spacing-6);
 	font-size: var(--text-sm);
 	max-height: 100%;
 	overflow: auto;
@@ -84,9 +84,14 @@
 	grid-gap: 2px;
 }
 
-.toolbar .inputs li {
+.toolbar .inputs li,
+.toolbar .checkbox {
 	padding: var(--spacing-1) var(--spacing-2);
 	background: var(--color-white);
+	border-radius: var(--rounded-sm);
+	height: 28px;
+	display: flex;
+	align-items: center;
 }
 
 .toolbar .inputs label {
@@ -97,13 +102,6 @@
 
 .toolbar .inputs input {
 	margin-right: var(--spacing-2);
-}
-
-.toolbar .checkbox {
-	background: var(--color-white);
-	padding: var(--spacing-1) var(--spacing-2);
-	border-radius: var(--rounded-sm);
-	line-height: 1.4;
 }
 
 .toolbar .range {
@@ -158,13 +156,13 @@
 	outline: 2px solid var(--color-blue-700);
 }
 
+.toolbar .patterns-cancel {
+	color: var(--color-gray-600);
+}
+
 .toolbar .btn {
 	border: 2px solid currentColor;
 	width: 100%;
-	padding: 0.25rem;
+	padding: var(--spacing-1);
 	border-radius: var(--rounded);
-}
-
-.toolbar .patterns-cancel {
-	color: var(--color-gray-600);
 }
