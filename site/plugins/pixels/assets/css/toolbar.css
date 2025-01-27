@@ -107,9 +107,10 @@
 }
 
 .toolbar .range {
-	line-height: 0;
+	--range-thumb-size: 0.85rem;
+
 	background: var(--color-white);
-	padding: 0.25rem 0.5rem;
+	padding: var(--spacing-2);
 	border-radius: var(--rounded-sm);
 }
 

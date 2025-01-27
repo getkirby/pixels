@@ -12,6 +12,7 @@
 
 @import "framework/variables.css";
 @import "framework/reset.css";
+@import "framework/range.css";
 @import "framework/buttons.css";
 @import "framework/forms.css";
 @import "framework/grid.css";

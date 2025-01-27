@@ -9,6 +9,9 @@ body {
 }
 
 .pixels {
+	--range-track-back: var(--color-border);
+	--range-track-height: 3px;
+
 	display: grid;
 	height: 100%;
 	grid-template-columns: 20rem 1fr;
@@ -40,10 +43,13 @@ main {
 }
 
 .zoom {
+	--range-thumb-size: 0.6rem;
+
 	position: fixed;
 	right: var(--spacing-6);
 	bottom: var(--spacing-6);
 	display: flex;
+	align-items: center;
 	gap: var(--spacing-1);
 	z-index: 100;
 	background: rgba(255, 255, 255, 0.85);
@@ -53,62 +59,13 @@ main {
 	transition: opacity 0.2s ease-in-out;
 	box-shadow: var(--shadow);
 }
-
 main:hover .zoom {
 	opacity: 1;
 }
-
 .zoom input {
 	width: 4rem;
 }
 .zoom svg {
 	width: 15px;
 	height: 15px;
-}
-
-input[type="range"] {
-	-webkit-appearance: none;
-	appearance: none;
-	background: transparent;
-}
-input[type="range"]::-webkit-slider-runnable-track {
-	background: var(--color-border);
-	height: 3px;
-}
-input[type="range"]::-moz-range-track {
-	background: var(--color-border);
-	height: 3px;
-}
-input[type="range"]::-webkit-slider-thumb {
-	background: var(--color-black);
-	border: 2px solid var(--color-white);
-	height: 0.8rem;
-	width: 0.8rem;
-	border-radius: 100%;
-	cursor: grab;
-}
-input[type="range"]::-moz-range-thumb {
-	background: var(--color-black);
-	border: 2px solid var(--color-white);
-	height: 0.6rem;
-	width: 0.6rem;
-	border-radius: 100%;
-	cursor: grab;
-}
-input[type="range"]::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	margin-top: -5px;
-}
-
-input[type="range"]:focus {
-	outline: none;
-}
-input[type="range"]:focus::-webkit-slider-thumb {
-	outline: 3px solid var(--color-focus);
-	outline-offset: -1px;
-}
-input[type="range"]:focus::-moz-range-thumb {
-	outline: 3px solid var(--color-focus);
-	outline-offset: -1px;
 }
