@@ -94,6 +94,13 @@ createApp({
 		this.settings.zoom = zoom;
 		this.isExporting = false;
 	},
+	importJSON(file) {
+		const reader = new FileReader();
+		reader.onload = () => {
+			this.settings = JSON.parse(reader.result);
+		};
+		reader.readAsText(file);
+	},
 	loadImage(file) {
 		const reader = new FileReader();
 
@@ -112,7 +119,13 @@ createApp({
 			return;
 		}
 
-		this.loadImage(event.dataTransfer.files[0]);
+		const file = event.dataTransfer.files[0];
+
+		if (file.name.endsWith(".json")) {
+			return this.importJSON(file)
+		}
+
+		this.loadImage(file);
 	},
 	onUpload(event) {
 		if (!event.target.files || event.target.files.length === 0) {
@@ -160,6 +173,18 @@ function toggleGroups(event) {
 for (const group of groups) {
   group.addEventListener("toggle", toggleGroups);
 }
+
+// Add listener for export keyboard shortcut
+document.addEventListener("keydown", (event) => {
+  if ((event.ctrlKey || event.metaKey) && event.key === "s") {
+    event.preventDefault();
+		const data = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(settings));
+		const link = document.createElement("a");
+		link.href = data;
+		link.download = "pixels.json";
+		link.click();
+  }
+});
 
 // prevent default drag events
 const preventDefault = (e) => {
