@@ -1,6 +1,7 @@
 <script type="module">
 import { toPng } from '<?= $plugin->asset('js/html-to-image.js')->mediaUrl() ?>';
 import { createApp, reactive } from '<?= $plugin->asset('js/petite-vue.js')->mediaUrl() ?>';
+import { parseQuery } from '<?= $plugin->asset('js/url.js')->mediaUrl() ?>';
 
 const patterns = <?php echo json_encode($patterns) ?>;
 const presets = JSON.parse(`<?= $presets ?>`);
@@ -100,6 +101,15 @@ createApp({
 			this.settings = JSON.parse(reader.result);
 		};
 		reader.readAsText(file);
+	},
+	init() {
+		this.setPreset('social');
+
+		// integrate settings passed in URL
+		this.settings = {
+			...this.settings,
+			...parseQuery(this.settings),
+		};
 	},
 	loadImage(file) {
 		const reader = new FileReader();

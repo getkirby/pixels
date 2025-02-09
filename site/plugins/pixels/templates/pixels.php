@@ -8,7 +8,7 @@
 	<div v-scope class="pixels" @drop.prevent="onDrop">
 		<?php snippet('pixels/toolbar') ?>
 
-		<main @mounted="setPreset('social')">
+		<main @mounted="init">
 			<?php snippet('pixels/exporter') ?>
 			<?php snippet('pixels/canvas') ?>
 			<?php snippet('pixels/zoom') ?>
