@@ -1,9 +1,9 @@
 <?php
 
 use Kirby\Cms\Page;
-use Kirby\Cms\Plugin;
 use Kirby\Filesystem\Dir;
 use Kirby\Filesystem\F;
+use Kirby\Plugin\Plugin;
 
 class PixelsPage extends Page
 {
