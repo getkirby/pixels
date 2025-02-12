@@ -10,7 +10,7 @@ return [
 		/**
 		 * Columns config for `layout: table`
 		 */
-		'columns' => function (array $columns = null) {
+		'columns' => function (array|null $columns = null) {
 			return $columns ?? [];
 		},
 		/**
@@ -19,7 +19,7 @@ return [
 		 */
 		'layout' => function (string $layout = 'list') {
 			$layouts = ['list', 'cardlets', 'cards', 'table'];
-			return in_array($layout, $layouts) ? $layout : 'list';
+			return in_array($layout, $layouts, true) ? $layout : 'list';
 		},
 		/**
 		 * Whether the raw content file values should be used for the table column previews. Should not be used unless it eases performance issues in your setup introduced with Kirby 4.2

@@ -21,6 +21,8 @@
 	"copy": "Afrita",
 	"copy.all": "Afrita allt",
 	"copy.success": "Afritaði {count}!",
+	"copy.success.multiple": "Afritaði {count}!",
+	"copy.url": "Afrita slóð",
 	"create": "Stofna",
 	"custom": "Sérstillt",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Ógyld skyndiminnisgerð \"{type}\"",
 
+	"error.content.lock.delete": "Þessi útgáfa er læst og henni verður ekki eytt",
+	"error.content.lock.move": "Þessi útgáfa er læst og hún verður ekki færð",
+	"error.content.lock.publish": "Þessi útgáfa er núþegar útgefin",
+	"error.content.lock.replace": "Þessi útfáfa er læst og það verður ekki skipt út",
+	"error.content.lock.update": "Þessi útgáfa er læst og hún verður ekki uppfærð",
+
+	"error.entries.max.plural": "You must not add more than {max} entries",
+	"error.entries.max.singular": "You must not add more than one entry",
+	"error.entries.min.plural": "You must add at least {min} entries",
+	"error.entries.min.singular": "You must add at least one entry",
+	"error.entries.supports": "\"{type}\" field type is not supported for the entries field",
+	"error.entries.validation": "Það er villa í \"{field}\" sviðinu í röð {index}",
+
 	"error.email.preset.notFound": "Netfangstillingarnar: \"{name}\" fundust ekki",
 
 	"error.field.converter.invalid": "Ógildur umbreytari \"{converter}\"",
+	"error.field.link.options": "Invalid options: {options}",
 	"error.field.type.missing": "Sviðið \"{ name }\": Sviðgerðin er \"{type}\" er alls ekki til.",
 
 	"error.file.changeName.empty": "Nafn skal fylla út",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "Sniðmátinu fyrir skránna \"{id}\" er ekki hægt að breyta í  \"{template}\" (gild: \"{blueprints}\")",
 	"error.file.changeTemplate.permission": "Þú mátt ekkert breyta sniðmátinu fyrir skránna \"{id}\"",
 
+	"error.file.delete.multiple": "Not all files could be deleted. Try each remaining file individually to see the specific error that prevents deletion.",
 	"error.file.duplicate": "Skrá með nafninu \"{filename}\" er nú þegar til",
 	"error.file.extension.forbidden": "Skrárendingin \"{extension}\" er ekki leyfð",
 	"error.file.extension.invalid": "Óleyfilegt skrársnið hér: {extension}",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "Skrárnafnið má ekki skilja eftir tómt",
 	"error.file.notFound": "Skráin \"{filename}\" fannst ekki",
 	"error.file.orientation": "Snið myndarinnar þarf að vera \"{orientation}\"",
+	"error.file.sort.permission": "Þú mátt ekkert breyta röðuninni á  \"{filename}\"",
 	"error.file.type.forbidden": "Þú mátt ekkert hlaða inn {type} skrám",
 	"error.file.type.invalid": "Ógild skrártegund: {type}",
 	"error.file.undefined": "Skráin fannst ekki",
@@ -161,6 +179,7 @@
 	"error.page.delete": "Síðunni \"{slug}\" er ekki hægt að eyða",
 	"error.page.delete.confirm": "Ritaðu titil síðunnar til að staðfesta",
 	"error.page.delete.hasChildren": "Síðan hefur undirsíður og er því ekki hægt að eyða",
+	"error.page.delete.multiple": "Not all pages could be deleted. Try each remaining page individually to see the specific error that prevents deletion.",
 	"error.page.delete.permission": "Þú mátt ekkert eyða \"{slug}\"",
 	"error.page.draft.duplicate": "Uppkast með slóðinni \"{slug}\" er þegar til",
 	"error.page.duplicate": "Síða með slóðinni \"{slug}\" er þegar til",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "Það er ekki hægt að færa síðuna á sjálfa sig.",
 	"error.page.move.directory": "Ekki er reyndist unnt að færa möppu síðunnar.",
 	"error.page.move.duplicate": "Undirsíða með slóðinni og forskeytinu \"{slug}\" er núþegar til",
+	"error.page.move.noSections": "Síðan \"{parent}\" getur ekki átt undirsíður þar sem tilskylin svið til umsýslu á undirsíðum vantar",
 	"error.page.move.notFound": "Síðan sem færð var finnst því miður ekki",
 	"error.page.move.permission": "Þú mátt ekkert færa \"{slug}\"",
 	"error.page.move.template": "Sniðmátið \"{template}\" er ekki gillt sem undirsíða af \"{parent}\"",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Fyrirsögn",
 	"field.blocks.heading.text": "Texti/Prósi",
 	"field.blocks.heading.placeholder": "Fyrirsögn …",
+	"field.blocks.figure.back.plain": "Látlaust",
+	"field.blocks.figure.back.pattern.light": "Mynstur (ljóst)",
+	"field.blocks.figure.back.pattern.dark": "Mynstur (dökkt)",
 	"field.blocks.image.alt": "ALT texti",
 	"field.blocks.image.caption": "Myndartexti",
 	"field.blocks.image.crop": "Kroppa",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "Vefslóð",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Ætlar þú virkilega að eyða öllum færslum?",
+	"field.entries.empty": "Engar færslur enn",
+
 	"field.files.empty": "Engar skrár valdar ennþá",
+	"field.files.empty.single": "Engin skrá valin enn",
 
 	"field.layout.change": "Breyta uppsetningu ramma",
 	"field.layout.delete": "Eyða ramma",
@@ -345,12 +372,14 @@
 	"field.object.empty": "Engar upplýsingar enn",
 
 	"field.pages.empty": "Engar síður valdar ennþá",
+	"field.pages.empty.single": "Engin síða valin enn",
 
 	"field.structure.delete.confirm": "Viltu virkilega eyða þessari röð?",
 	"field.structure.delete.confirm.all": "Ætlar þú virkilega að eyða öllum færslum?",
 	"field.structure.empty": "Engar færslur enn",
 
 	"field.users.empty": "Engir notendur valdir enn",
+	"field.users.empty.single": "Enginn notandi valinn enn",
 
 	"fields.empty": "Hér eru engin svið enn",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Breyta röðun",
 
 	"files": "Skrár",
+	"files.delete.confirm.selected": "Do you really want to delete the selected files? This action cannot be undone.",
 	"files.empty": "Engar skrár enn",
 
 	"filter": "Sigta",
+
+	"form.discard": "Hunsa breytingar",
+	"form.discard.confirm": "Ætlarðu virkilega að <strong>hunsa alla breytingar</strong>?",
+	"form.locked": "Efnið er þér ekki aðgengilegt þar sem annar notandi er nú þegar að vinna í því",
+	"form.unsaved": "Þessar breytingar hafa ekki verið vistaðar",
+	"form.preview": "Skoða breytingar",
+	"form.preview.draft": "Skoða uppkast",
 
 	"hide": "Fela",
 	"hour": "Klukkustund",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Er allt tilbúið til að gefa vefinn út?",
 	"license.status.missing.info": "Ekkert gilt skráningarleyfi",
 	"license.status.missing.label": "Vinsamlegast virkjaðu leyfið þitt",
+	"license.status.unknown.info": "Staða leyfis fyrir hugbúnaðinn er óþekkt",
+	"license.status.unknown.label": "Unknown",
 	"license.manage": "Sýslaðu með leyfin þín",
 	"license.purchased": "Verslað",
 	"license.success": "Þakka þér fyrir að velja Kirby",
@@ -456,6 +495,9 @@
 
 	"lock.unsaved": "Óvistað breytingar",
 	"lock.unsaved.empty": "Það eru öngvar óvistaðar breytingar",
+	"lock.unsaved.files": "Óvistaðar skrár",
+	"lock.unsaved.pages": "Óvistaðar síður",
+	"lock.unsaved.users": "Óvistaðir notendareikningar",
 	"lock.isLocked": "Óvistaðar breytingar framkvæmdar af {email}",
 	"lock.unlock": "Aflæsa",
 	"lock.unlock.submit": "Aflæsa og yfirskrifa óvistaðar breytingar framkvæmdar af <strong>{email}</strong>",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "Síðan er útgefin en þó ólistuð.",
 
 	"pages": "Síður",
+	"pages.delete.confirm.selected": "Do you really want to delete the selected pages? This action cannot be undone.",
 	"pages.empty": "Engar síður enn",
 	"pages.status.draft": "Uppköst",
 	"pages.status.listed": "Útgefnar og listaðar",
@@ -578,6 +621,10 @@
 	"plugins": "Viðbætur",
 	"prev": "Fyrri",
 	"preview": "Forskoða",
+
+	"publish": "Útgefa",
+	"published": "Útgefnar og listaðar",
+
 	"remove": "Fjarlægja",
 	"rename": "Endurnefna",
 	"renew": "Endurnýja",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Enginn",
 
 	"save": "Vista",
+	"saved": "Vistað",
 	"search": "Leita",
+	"searching": "Leita ..",
 	"search.min": "Lágmark {min} stafir til að leita",
 	"search.all": "Sýna allar {count} niðurstöður.",
 	"search.results.none": "Engar niðurstöður",
@@ -630,7 +679,9 @@
 	"system.issues.git": ".git mappan virðist vera berskjölduð",
 	"system.issues.https": "Við mælum harðlega með því að þú notir HTTPS fyrir öll þín vefsvæði",
 	"system.issues.kirby": "Kirby mappan virðist vera  berskjölduð",
+	"system.issues.local": "The site is running locally with relaxed security checks",
 	"system.issues.site": "Mappa vefsvæðisins virðist vera berskjölduð",
+	"system.issues.vue.compiler": "The Vue template compiler is enabled",
 	"system.issues.vulnerability.kirby": "Uppsetningin þín gæti verið berskjölduð gagnvart eftirfarandi veikleika: ({ severity } veikleikinn): { description }",
 	"system.issues.vulnerability.plugin": "Uppsetningin þín gæti verið berskjölduð gagnvart eftirfarandi veikleika í viðbótinni { plugin }: ({ severity } veikleikinn): { description }",
 	"system.updateStatus": "Uppfærslustaða",
@@ -646,6 +697,12 @@
 	"tel": "Sími",
 	"tel.placeholder": "+3548561234",
 	"template": "Sniðmát",
+
+	"theme": "Þema",
+	"theme.light": "Ljósin kveikt",
+	"theme.dark": "Ljósin slökkt",
+	"theme.automatic": "Nota kerfisstillingu",
+
 	"title": "Titill",
 	"today": "Núna",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Breyta tungumáli",
 	"user.changeName": "Endurnefna þennan notanda",
 	"user.changePassword": "Breyta lykilorð",
+	"user.changePassword.current": "Your current password",
 	"user.changePassword.new": "Nýtt lykilorð",
 	"user.changePassword.new.confirm": "Staðfestu nýtt lykilorð…",
 	"user.changeRole": "Breyta hlutverki",
@@ -715,10 +773,13 @@
 	"users": "Notendur",
 
 	"version": "Útgáfa",
+	"version.changes": "Breytt útgáfa",
+	"version.compare": "Bera saman útgáfur",
 	"version.current": "Núverandi útgáfa",
 	"version.latest": "Nýjasta útgáfa",
 	"versionInformation": "Útgáfuupplýsingar",
 
+	"view": "Sýn",
 	"view.account": "Þínar stillingar",
 	"view.installation": "Uppsetning",
 	"view.languages": "Tungumál",

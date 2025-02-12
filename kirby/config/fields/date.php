@@ -24,7 +24,7 @@ return [
 		/**
 		 * Default date when a new page/file/user gets created
 		 */
-		'default' => function (string $default = null): string {
+		'default' => function (string|null $default = null): string {
 			return $this->toDatetime($default) ?? '';
 		},
 
@@ -46,13 +46,13 @@ return [
 		/**
 		 * Latest date, which can be selected/saved (Y-m-d)
 		 */
-		'max' => function (string $max = null): string|null {
+		'max' => function (string|null $max = null): string|null {
 			return Date::optional($max);
 		},
 		/**
 		 * Earliest date, which can be selected/saved (Y-m-d)
 		 */
-		'min' => function (string $min = null): string|null {
+		'min' => function (string|null $min = null): string|null {
 			return Date::optional($min);
 		},
 
@@ -125,27 +125,27 @@ return [
 			$format = $this->time === false ? 'd.m.Y' : 'd.m.Y H:i';
 
 			if ($min && $max && $value->isBetween($min, $max) === false) {
-				throw new Exception([
-					'key' => 'validation.date.between',
-					'data' => [
+				throw new Exception(
+					key: 'validation.date.between',
+					data: [
 						'min' => $min->format($format),
 						'max' => $max->format($format)
 					]
-				]);
-			} elseif ($min && $value->isMin($min) === false) {
-				throw new Exception([
-					'key' => 'validation.date.after',
-					'data' => [
-						'date' => $min->format($format),
-					]
-				]);
-			} elseif ($max && $value->isMax($max) === false) {
-				throw new Exception([
-					'key' => 'validation.date.before',
-					'data' => [
-						'date' => $max->format($format),
-					]
-				]);
+				);
+			}
+
+			if ($min && $value->isMin($min) === false) {
+				throw new Exception(
+					key: 'validation.date.after',
+					data: ['date' => $min->format($format)]
+				);
+			}
+
+			if ($max && $value->isMax($max) === false) {
+				throw new Exception(
+					key: 'validation.date.before',
+					data: ['date' => $max->format($format)]
+				);
 			}
 
 			return true;

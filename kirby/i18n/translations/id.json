@@ -21,6 +21,8 @@
 	"copy": "Salin",
 	"copy.all": "Salin semua",
 	"copy.success": "{count} disalin!",
+	"copy.success.multiple": "{count} copied!",
+	"copy.url": "Copy URL",
 	"create": "Buat",
 	"custom": "Kustom",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Tipe tembolok tidak valid \"{type}\"",
 
+	"error.content.lock.delete": "The version is locked and cannot be deleted",
+	"error.content.lock.move": "The source version is locked and cannot be moved",
+	"error.content.lock.publish": "This version is already published",
+	"error.content.lock.replace": "The version is locked and cannot be replaced",
+	"error.content.lock.update": "The version is locked and cannot be updated",
+
+	"error.entries.max.plural": "You must not add more than {max} entries",
+	"error.entries.max.singular": "You must not add more than one entry",
+	"error.entries.min.plural": "You must add at least {min} entries",
+	"error.entries.min.singular": "You must add at least one entry",
+	"error.entries.supports": "\"{type}\" field type is not supported for the entries field",
+	"error.entries.validation": "Ada kesalahan pada bidang \"{field}\" di baris {index}",
+
 	"error.email.preset.notFound": "Surel \"{name}\" tidak dapat ditemukan",
 
 	"error.field.converter.invalid": "Konverter \"{converter}\" tidak valid",
+	"error.field.link.options": "Invalid options: {options}",
 	"error.field.type.missing": "Bidang \"{ name }\": Tipe bidang \"{ type }\" tidak ada",
 
 	"error.file.changeName.empty": "Nama harus diisi",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "Templat untuk berkas \"{id}\" tidak dapat diubah menjadi \"{template}\" (valid: \"{blueprints}\")",
 	"error.file.changeTemplate.permission": "Anda tidak diizinkan mengubah templat untuk berkas \"{id}\"",
 
+	"error.file.delete.multiple": "Not all files could be deleted. Try each remaining file individually to see the specific error that prevents deletion.",
 	"error.file.duplicate": "Berkas dengan nama \"{filename}\" sudah ada",
 	"error.file.extension.forbidden": "Ekstensi \"{extension}\" tidak diizinkan",
 	"error.file.extension.invalid": "Ekstensi tidak valid: {extension}",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "Nama berkas harus diisi",
 	"error.file.notFound": "Berkas \"{filename}\" tidak dapat ditemukan",
 	"error.file.orientation": "Orientasi gambar harus \"{orientation}\"",
+	"error.file.sort.permission": "You are not allowed to change the sorting of \"{filename}\"",
 	"error.file.type.forbidden": "Anda tidak diizinkan mengunggah berkas dengan tipe {type}",
 	"error.file.type.invalid": "Tipe berkas tidak valid: {type}",
 	"error.file.undefined": "Berkas tidak dapat ditemukan",
@@ -161,6 +179,7 @@
 	"error.page.delete": "Halaman \"{slug}\" tidak dapat dihapus",
 	"error.page.delete.confirm": "Masukkan judul halaman untuk mengonfirmasi",
 	"error.page.delete.hasChildren": "Halaman ini memiliki sub-halaman dan tidak dapat dihapus",
+	"error.page.delete.multiple": "Not all pages could be deleted. Try each remaining page individually to see the specific error that prevents deletion.",
 	"error.page.delete.permission": "Anda tidak diizinkan menghapus \"{slug}\"",
 	"error.page.draft.duplicate": "Draf halaman dengan akhiran URL \"{slug}\" sudah ada",
 	"error.page.duplicate": "Halaman dengan akhiran URL \"{slug}\" sudah ada",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "Halaman tidak dapat dipindahkan ke dirinya sendiri",
 	"error.page.move.directory": "Direktori halaman tidak dapat dipindahkan",
 	"error.page.move.duplicate": "Suatu sub halaman dengan akhiran URL \"{slug}\" sudah ada",
+	"error.page.move.noSections": "The page \"{parent}\" cannot be a parent of any page because it lacks any pages sections in its blueprint",
 	"error.page.move.notFound": "Halaman yang dipindahkan tidak dapat ditemukan",
 	"error.page.move.permission": "Anda tidak diizinkan memindahkan \"{slug}\"",
 	"error.page.move.template": "Templat \"{template}\" tidak dapat diterima sebagai sub halaman dari \"{parent}\"",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Penajukan",
 	"field.blocks.heading.text": "Teks",
 	"field.blocks.heading.placeholder": "Penajukan …",
+	"field.blocks.figure.back.plain": "Plain",
+	"field.blocks.figure.back.pattern.light": "Pattern (light)",
+	"field.blocks.figure.back.pattern.dark": "Pattern (dark)",
 	"field.blocks.image.alt": "Teks alternatif",
 	"field.blocks.image.caption": "Keterangan",
 	"field.blocks.image.crop": "Pangkas",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "URL Video",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Do you really want to delete all entries?",
+	"field.entries.empty": "Belum ada entri",
+
 	"field.files.empty": "Belum ada berkas yang dipilih",
+	"field.files.empty.single": "No file selected yet",
 
 	"field.layout.change": "Change layout",
 	"field.layout.delete": "Hapus tata letak",
@@ -345,12 +372,14 @@
 	"field.object.empty": "No information yet",
 
 	"field.pages.empty": "Belum ada halaman yang dipilih",
+	"field.pages.empty.single": "No page selected yet",
 
 	"field.structure.delete.confirm": "Anda yakin menghapus baris ini?",
 	"field.structure.delete.confirm.all": "Do you really want to delete all entries?",
 	"field.structure.empty": "Belum ada entri",
 
 	"field.users.empty": "Belum ada pengguna yang dipilih",
+	"field.users.empty.single": "No user selected yet",
 
 	"fields.empty": "No fields yet",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Ubah posisi",
 
 	"files": "Berkas",
+	"files.delete.confirm.selected": "Do you really want to delete the selected files? This action cannot be undone.",
 	"files.empty": "Belum ada berkas",
 
 	"filter": "Filter",
+
+	"form.discard": "Discard changes",
+	"form.discard.confirm": "Do you really want to <strong>discard all your changes</strong>?",
+	"form.locked": "This content is disabled for you as it is currently edited by another user",
+	"form.unsaved": "The current changes have not yet been saved",
+	"form.preview": "Preview changes",
+	"form.preview.draft": "Preview draft",
 
 	"hide": "Sembunyikan",
 	"hour": "Jam",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Ready to launch your site?",
 	"license.status.missing.info": "No valid license",
 	"license.status.missing.label": "Please activate your license",
+	"license.status.unknown.info": "The license status is unknown",
+	"license.status.unknown.label": "Unknown",
 	"license.manage": "Manage your licenses",
 	"license.purchased": "Purchased",
 	"license.success": "Terima kasih atas dukungan untuk Kirby",
@@ -456,6 +495,9 @@
 
 	"lock.unsaved": "Perubahan belum tersimpan",
 	"lock.unsaved.empty": "Tidak ada lagi perubahan belum tersimpan",
+	"lock.unsaved.files": "Unsaved files",
+	"lock.unsaved.pages": "Unsaved pages",
+	"lock.unsaved.users": "Unsaved accounts",
 	"lock.isLocked": "Unsaved changes by {email}",
 	"lock.unlock": "Buka kunci",
 	"lock.unlock.submit": "Unlock and overwrite unsaved changes by <strong>{email}</strong>",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "Halaman hanya dapat diakses via URL",
 
 	"pages": "Halaman",
+	"pages.delete.confirm.selected": "Do you really want to delete the selected pages? This action cannot be undone.",
 	"pages.empty": "Belum ada halaman",
 	"pages.status.draft": "Draf",
 	"pages.status.listed": "Dipublikasikan",
@@ -578,6 +621,10 @@
 	"plugins": "Plugins",
 	"prev": "Sebelumnya",
 	"preview": "Pratinjau",
+
+	"publish": "Publish",
+	"published": "Dipublikasikan",
+
 	"remove": "Hapus",
 	"rename": "Ubah nama",
 	"renew": "Renew",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Tidak siapapun",
 
 	"save": "Simpan",
+	"saved": "Saved",
 	"search": "Cari",
+	"searching": "Searching",
 	"search.min": "Masukkan {min} karakter untuk mencari",
 	"search.all": "Show all {count} results",
 	"search.results.none": "Tidak ada hasil",
@@ -630,7 +679,9 @@
 	"system.issues.git": "The .git folder seems to be exposed",
 	"system.issues.https": "We recommend HTTPS for all your sites",
 	"system.issues.kirby": "The kirby folder seems to be exposed",
+	"system.issues.local": "The site is running locally with relaxed security checks",
 	"system.issues.site": "The site folder seems to be exposed",
+	"system.issues.vue.compiler": "The Vue template compiler is enabled",
 	"system.issues.vulnerability.kirby": "Instalasi Anda mungkin terpengaruh oleh celah keamanan berikut ({ severity } severity): { description }",
 	"system.issues.vulnerability.plugin": "Instalasi Anda mungkin terpengaruh oleh celah keamanan di dalam plugin { plugin } ({ severity } severity): { description }",
 	"system.updateStatus": "Update status",
@@ -646,6 +697,12 @@
 	"tel": "Phone",
 	"tel.placeholder": "+49123456789",
 	"template": "Templat",
+
+	"theme": "Theme",
+	"theme.light": "Lights on",
+	"theme.dark": "Lights off",
+	"theme.automatic": "Match system default",
+
 	"title": "Judul",
 	"today": "Hari ini",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Ubah bahasa",
 	"user.changeName": "Ubah nama pengguna ini",
 	"user.changePassword": "Ubah sandi",
+	"user.changePassword.current": "Your current password",
 	"user.changePassword.new": "Sandi baru",
 	"user.changePassword.new.confirm": "Konfirmasi sandi baru…",
 	"user.changeRole": "Ubah peran",
@@ -715,10 +773,13 @@
 	"users": "Pengguna",
 
 	"version": "Versi",
+	"version.changes": "Changed version",
+	"version.compare": "Compare versions",
 	"version.current": "Current version",
 	"version.latest": "Latest version",
 	"versionInformation": "Version information",
 
+	"view": "View",
 	"view.account": "Akun Anda",
 	"view.installation": "Pemasangan",
 	"view.languages": "Bahasa",

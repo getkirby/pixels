@@ -26,7 +26,7 @@ return [
 		/**
 		 * Sets the default text when a new page/file/user is created
 		 */
-		'default' => function (string $default = null) {
+		'default' => function (string|null $default = null) {
 			return trim($default ?? '');
 		},
 
@@ -48,28 +48,28 @@ return [
 		/**
 		 * Sets the font family (sans or monospace)
 		 */
-		'font' => function (string $font = null) {
+		'font' => function (string|null $font = null) {
 			return $font === 'monospace' ? 'monospace' : 'sans-serif';
 		},
 
 		/**
 		 * Maximum number of allowed characters
 		 */
-		'maxlength' => function (int $maxlength = null) {
+		'maxlength' => function (int|null $maxlength = null) {
 			return $maxlength;
 		},
 
 		/**
 		 * Minimum number of required characters
 		 */
-		'minlength' => function (int $minlength = null) {
+		'minlength' => function (int|null $minlength = null) {
 			return $minlength;
 		},
 
 		/**
 		 * Changes the size of the textarea. Available sizes: `small`, `medium`, `large`, `huge`
 		 */
-		'size' => function (string $size = null) {
+		'size' => function (string|null $size = null) {
 			return $size;
 		},
 
@@ -80,7 +80,7 @@ return [
 			return $spellcheck;
 		},
 
-		'value' => function (string $value = null) {
+		'value' => function (string|null $value = null) {
 			return trim($value ?? '');
 		}
 	],
@@ -89,12 +89,11 @@ return [
 			[
 				'pattern' => 'files',
 				'action' => function () {
-					$params = array_merge($this->field()->files(), [
+					return $this->field()->filepicker([
+						...$this->field()->files(),
 						'page'   => $this->requestQuery('page'),
 						'search' => $this->requestQuery('search')
 					]);
-
-					return $this->field()->filepicker($params);
 				}
 			],
 			[
@@ -104,14 +103,12 @@ return [
 					$field   = $this->field();
 					$uploads = $field->uploads();
 
-					return $this->field()->upload($this, $uploads, function ($file, $parent) use ($field) {
-						$absolute = $field->model()->is($parent) === false;
-
-						return [
-							'filename' => $file->filename(),
-							'dragText' => $file->panel()->dragText('auto', $absolute),
-						];
-					});
+					return $this->field()->upload($this, $uploads, fn ($file, $parent) => [
+						'filename' => $file->filename(),
+						'dragText' => $file->panel()->dragText(
+							absolute: $field->model()->is($parent) === false
+						),
+					]);
 				}
 			]
 		];

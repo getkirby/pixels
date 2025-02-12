@@ -21,6 +21,8 @@
 	"copy": "Kopioi",
 	"copy.all": "Kopioi kaikki",
 	"copy.success": "{count} copied!",
+	"copy.success.multiple": "{count} copied!",
+	"copy.url": "Copy URL",
 	"create": "Luo",
 	"custom": "Custom",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Invalid cache type \"{type}\"",
 
+	"error.content.lock.delete": "The version is locked and cannot be deleted",
+	"error.content.lock.move": "The source version is locked and cannot be moved",
+	"error.content.lock.publish": "This version is already published",
+	"error.content.lock.replace": "The version is locked and cannot be replaced",
+	"error.content.lock.update": "The version is locked and cannot be updated",
+
+	"error.entries.max.plural": "You must not add more than {max} entries",
+	"error.entries.max.singular": "You must not add more than one entry",
+	"error.entries.min.plural": "You must add at least {min} entries",
+	"error.entries.min.singular": "You must add at least one entry",
+	"error.entries.supports": "\"{type}\" field type is not supported for the entries field",
+	"error.entries.validation": "There's an error on the \"{field}\" field in row {index}",
+
 	"error.email.preset.notFound": "Nimellä \"{name}\" ja kyseisellä verkkotunnuksella ei löydy sähköpostiosoitetta",
 
 	"error.field.converter.invalid": "Muunnin \"{converter}\" ei kelpaa",
+	"error.field.link.options": "Invalid options: {options}",
 	"error.field.type.missing": "Field \"{ name }\": The field type \"{ type }\" does not exist",
 
 	"error.file.changeName.empty": "Nimi ei voi olla tyhjä",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "The template for the file \"{id}\" cannot be changed to \"{template}\" (valid: \"{blueprints}\")",
 	"error.file.changeTemplate.permission": "You are not allowed to change the template for the file \"{id}\"",
 
+	"error.file.delete.multiple": "Not all files could be deleted. Try each remaining file individually to see the specific error that prevents deletion.",
 	"error.file.duplicate": "Tiedosto nimeltä \"{filename}\" on jo olemassa",
 	"error.file.extension.forbidden": "Tiedostopääte \"{extension}\" ei ole sallittu",
 	"error.file.extension.invalid": "Pääte {extension} ei kelpaa",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "Tiedostonimi ei voi olla tyhjä",
 	"error.file.notFound": "Tiedostoa \"{filename}\" ei löytynyt",
 	"error.file.orientation": "Kuvan suuntaus täytyy olla \"{orientation}\"",
+	"error.file.sort.permission": "You are not allowed to change the sorting of \"{filename}\"",
 	"error.file.type.forbidden": "Sinulla ei ole oikeutta lähettää tiedostoja joiden tyyppi on {type}",
 	"error.file.type.invalid": "Tiedostotyyppi {type} ei kelpaa",
 	"error.file.undefined": "Tiedostoa ei l\u00f6ytynyt",
@@ -161,6 +179,7 @@
 	"error.page.delete": "Sivua \"{slug}\" ei voi poistaa",
 	"error.page.delete.confirm": "Anna vahvistuksena sivun nimi",
 	"error.page.delete.hasChildren": "Sivu sisältää alasivuja eikä sitä voida poistaa",
+	"error.page.delete.multiple": "Not all pages could be deleted. Try each remaining page individually to see the specific error that prevents deletion.",
 	"error.page.delete.permission": "Sinulla ei ole oikeutta poistaa sivua \"{slug}\"",
 	"error.page.draft.duplicate": "Sivuluonnos URL-liitteellä \"{slug}\" on jo olemassa",
 	"error.page.duplicate": "Sivu URL-liitteellä \"{slug}\" on jo olemassa",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "The page cannot be moved into itself",
 	"error.page.move.directory": "The page directory cannot be moved",
 	"error.page.move.duplicate": "A sub page with the URL appendix \"{slug}\" already exists",
+	"error.page.move.noSections": "The page \"{parent}\" cannot be a parent of any page because it lacks any pages sections in its blueprint",
 	"error.page.move.notFound": "The moved page could not be found",
 	"error.page.move.permission": "You are not allowed to move \"{slug}\"",
 	"error.page.move.template": "The \"{template}\" template is not accepted as a subpage of \"{parent}\"",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Otsikko",
 	"field.blocks.heading.text": "Teksti",
 	"field.blocks.heading.placeholder": "Otsikko …",
+	"field.blocks.figure.back.plain": "Plain",
+	"field.blocks.figure.back.pattern.light": "Pattern (light)",
+	"field.blocks.figure.back.pattern.dark": "Pattern (dark)",
 	"field.blocks.image.alt": "Vaihtoehtoinen teksti",
 	"field.blocks.image.caption": "Kuvateksti",
 	"field.blocks.image.crop": "Rajaa",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "Videon URL",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Do you really want to delete all entries?",
+	"field.entries.empty": "Rivejä ei ole vielä lisätty",
+
 	"field.files.empty": "Tiedostoja ei ole vielä valittu",
+	"field.files.empty.single": "No file selected yet",
 
 	"field.layout.change": "Change layout",
 	"field.layout.delete": "Poista asettelu",
@@ -345,12 +372,14 @@
 	"field.object.empty": "Ei vielä tietoja",
 
 	"field.pages.empty": " Sivuja ei ole vielä valittu",
+	"field.pages.empty.single": "No page selected yet",
 
 	"field.structure.delete.confirm": "Haluatko varmasti poistaa tämän rivin?",
 	"field.structure.delete.confirm.all": "Do you really want to delete all entries?",
 	"field.structure.empty": "Rivejä ei ole vielä lisätty",
 
 	"field.users.empty": "Käyttäjiä ei ole vielä valittu",
+	"field.users.empty.single": "No user selected yet",
 
 	"fields.empty": "No fields yet",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Muuta järjestyspaikkaa",
 
 	"files": "Tiedostot",
+	"files.delete.confirm.selected": "Do you really want to delete the selected files? This action cannot be undone.",
 	"files.empty": "Tiedostoja ei ole vielä lisätty",
 
 	"filter": "Filter",
+
+	"form.discard": "Discard changes",
+	"form.discard.confirm": "Do you really want to <strong>discard all your changes</strong>?",
+	"form.locked": "This content is disabled for you as it is currently edited by another user",
+	"form.unsaved": "The current changes have not yet been saved",
+	"form.preview": "Preview changes",
+	"form.preview.draft": "Preview draft",
 
 	"hide": "Piilota",
 	"hour": "Tunti",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Ready to launch your site?",
 	"license.status.missing.info": "No valid license",
 	"license.status.missing.label": "Please activate your license",
+	"license.status.unknown.info": "The license status is unknown",
+	"license.status.unknown.label": "Unknown",
 	"license.manage": "Hallinnoi lisenssejäsi",
 	"license.purchased": "Purchased",
 	"license.success": "Kiitos kun tuet Kirbyä",
@@ -456,6 +495,9 @@
 
 	"lock.unsaved": "Tallentamattomia muutoksia",
 	"lock.unsaved.empty": "Ei enempää tallentamattomia muutoksia ",
+	"lock.unsaved.files": "Unsaved files",
+	"lock.unsaved.pages": "Unsaved pages",
+	"lock.unsaved.users": "Unsaved accounts",
 	"lock.isLocked": "Unsaved changes by {email}",
 	"lock.unlock": "Vapauta",
 	"lock.unlock.submit": "Unlock and overwrite unsaved changes by <strong>{email}</strong>",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "Sivulle pääsee vain URL:n kautta",
 
 	"pages": "Sivut",
+	"pages.delete.confirm.selected": "Do you really want to delete the selected pages? This action cannot be undone.",
 	"pages.empty": "Sivuja ei ole vielä lisätty",
 	"pages.status.draft": "Luonnokset",
 	"pages.status.listed": "Julkaistut",
@@ -578,6 +621,10 @@
 	"plugins": "Liitännäiset",
 	"prev": "Edellinen",
 	"preview": "Esikatselu",
+
+	"publish": "Publish",
+	"published": "Julkaistut",
+
 	"remove": "Poista",
 	"rename": "Nimeä uudelleen",
 	"renew": "Renew",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Tuntematon",
 
 	"save": "Tallenna",
+	"saved": "Saved",
 	"search": "Haku",
+	"searching": "Searching",
 	"search.min": "Anna vähintään {min} merkkiä hakua varten",
 	"search.all": "Show all {count} results",
 	"search.results.none": "Ei tuloksia",
@@ -630,7 +679,9 @@
 	"system.issues.git": ".git-kansio näyttäisi olevan julkinen",
 	"system.issues.https": "Suosittelemme HTTPS:n käyttöä kaikilla sivustoillasi",
 	"system.issues.kirby": "Kirby-kansio näyttäisi olevan julkinen",
+	"system.issues.local": "The site is running locally with relaxed security checks",
 	"system.issues.site": "Site-kansio näyttäisi olevan julkinen",
+	"system.issues.vue.compiler": "The Vue template compiler is enabled",
 	"system.issues.vulnerability.kirby": "Asennuksesi voi olla altis seuraaville haavoittuvuuksille ({ severity } vakavuus): { description }",
 	"system.issues.vulnerability.plugin": "Asennuksesi käyttämä liitännäinen { plugin } voi olla altis haavoittuvuudelle ({ severity } vakavuus): { description }",
 	"system.updateStatus": "Päivitysten tilanne",
@@ -646,6 +697,12 @@
 	"tel": "Phone",
 	"tel.placeholder": "+49123456789",
 	"template": "Sivupohja",
+
+	"theme": "Theme",
+	"theme.light": "Lights on",
+	"theme.dark": "Lights off",
+	"theme.automatic": "Match system default",
+
 	"title": "Nimi",
 	"today": "Tänään",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Vaihda kieli",
 	"user.changeName": "Nimeä uudelleen",
 	"user.changePassword": "Vaihda salasana",
+	"user.changePassword.current": "Your current password",
 	"user.changePassword.new": "Uusi salasana",
 	"user.changePassword.new.confirm": "Vahvista uusi salasana...",
 	"user.changeRole": "Muuta käyttäjätasoa",
@@ -715,10 +773,13 @@
 	"users": "Käyttäjät",
 
 	"version": "Versio",
+	"version.changes": "Changed version",
+	"version.compare": "Compare versions",
 	"version.current": "Nykyinen versio ",
 	"version.latest": "Uusin versio ",
 	"versionInformation": "Version tiedot",
 
+	"view": "View",
 	"view.account": "Oma käyttäjätili",
 	"view.installation": "Asennus",
 	"view.languages": "Kielet",

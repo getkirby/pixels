@@ -21,6 +21,8 @@
 	"copy": "Kopyala",
 	"copy.all": "Tümünü kopyala",
 	"copy.success": "{count} kopyalandı!",
+	"copy.success.multiple": "{count} kopyalandı!",
+	"copy.url": "Copy URL",
 	"create": "Oluştur",
 	"custom": "Özel",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Geçersiz önbellek türü \"{type}\"",
 
+	"error.content.lock.delete": "The version is locked and cannot be deleted",
+	"error.content.lock.move": "The source version is locked and cannot be moved",
+	"error.content.lock.publish": "This version is already published",
+	"error.content.lock.replace": "The version is locked and cannot be replaced",
+	"error.content.lock.update": "The version is locked and cannot be updated",
+
+	"error.entries.max.plural": "You must not add more than {max} entries",
+	"error.entries.max.singular": "You must not add more than one entry",
+	"error.entries.min.plural": "You must add at least {min} entries",
+	"error.entries.min.singular": "You must add at least one entry",
+	"error.entries.supports": "\"{type}\" field type is not supported for the entries field",
+	"error.entries.validation": "{index} satırındaki \"{field}\" alanında bir hata var",
+
 	"error.email.preset.notFound": "\"{name}\" e-posta adresi bulunamadı",
 
 	"error.field.converter.invalid": "Geçersiz dönüştürücü \"{converter}\"",
+	"error.field.link.options": "Invalid options: {options}",
 	"error.field.type.missing": "\"{ name }\" alanı: \"{ type }\" alan türü mevcut değil",
 
 	"error.file.changeName.empty": "İsim boş olmamalıdır",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "\"{id}\" dosyası için şablon \"{template}\" olarak değiştirilemez (geçerli: \"{blueprints}\")",
 	"error.file.changeTemplate.permission": "\"{id}\" dosyası için şablonu değiştirmenize izin verilmiyor",
 
+	"error.file.delete.multiple": "Not all files could be deleted. Try each remaining file individually to see the specific error that prevents deletion.",
 	"error.file.duplicate": "\"{filename}\" isimli bir dosya zaten var",
 	"error.file.extension.forbidden": "\"{extension}\" dosya uzantısına izin verilmiyor",
 	"error.file.extension.invalid": "Geçersiz uzantı: {extension}",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "Dosya adı boş bırakılamaz",
 	"error.file.notFound": "\"{filename}\" dosyası bulunamadı",
 	"error.file.orientation": "Resmin oryantasyonu \"{orientation}\" olmalıdır",
+	"error.file.sort.permission": "You are not allowed to change the sorting of \"{filename}\"",
 	"error.file.type.forbidden": "{type} dosya yükleme izni yok",
 	"error.file.type.invalid": "Geçersiz dosya türü: {type}",
 	"error.file.undefined": "Dosya bulunamad\u0131",
@@ -161,6 +179,7 @@
 	"error.page.delete": "\"{slug}\" sayfası silinemedi",
 	"error.page.delete.confirm": "Onaylamak için sayfa başlığını girin",
 	"error.page.delete.hasChildren": "Sayfada alt sayfalar var ve silinemiyor",
+	"error.page.delete.multiple": "Not all pages could be deleted. Try each remaining page individually to see the specific error that prevents deletion.",
 	"error.page.delete.permission": "\"{slug}\" öğesini silmenize izin verilmiyor",
 	"error.page.draft.duplicate": "\"{slug}\" adres eki olan bir sayfa taslağı zaten mevcut",
 	"error.page.duplicate": "\"{slug}\" adres eki içeren bir sayfa zaten mevcut",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "Sayfa kendi içine taşınamaz",
 	"error.page.move.directory": "Sayfa dizini taşınamaz",
 	"error.page.move.duplicate": "\"{slug}\" URL ekine sahip bir alt sayfa zaten mevcut",
+	"error.page.move.noSections": "The page \"{parent}\" cannot be a parent of any page because it lacks any pages sections in its blueprint",
 	"error.page.move.notFound": "Taşınan sayfa bulunamadı",
 	"error.page.move.permission": "\"{slug}\" öğesini taşımanıza izin verilmiyor",
 	"error.page.move.template": "\"{template}\" şablonu \"{parent}\" alt sayfası olarak kabul edilmiyor",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Başlık",
 	"field.blocks.heading.text": "Metin",
 	"field.blocks.heading.placeholder": "Başlık …",
+	"field.blocks.figure.back.plain": "Plain",
+	"field.blocks.figure.back.pattern.light": "Pattern (light)",
+	"field.blocks.figure.back.pattern.dark": "Pattern (dark)",
 	"field.blocks.image.alt": "Alternatif metin",
 	"field.blocks.image.caption": "Altyazı",
 	"field.blocks.image.crop": "Kırp",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "Video-URL",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Tüm girdileri gerçekten silmek istiyor musunuz?",
+	"field.entries.empty": "Henüz bir girdi yok",
+
 	"field.files.empty": "Henüz dosya seçilmedi",
+	"field.files.empty.single": "No file selected yet",
 
 	"field.layout.change": "Düzeni değiştir",
 	"field.layout.delete": "Düzeni sil",
@@ -345,12 +372,14 @@
 	"field.object.empty": "Henüz bilgi yok",
 
 	"field.pages.empty": "Henüz sayfa seçilmedi",
+	"field.pages.empty.single": "No page selected yet",
 
 	"field.structure.delete.confirm": "Bu girdiyi silmek istedi\u011finizden emin misiniz?",
 	"field.structure.delete.confirm.all": "Tüm girdileri gerçekten silmek istiyor musunuz?",
 	"field.structure.empty": "Hen\u00fcz bir girdi yok",
 
 	"field.users.empty": "Henüz kullanıcı seçilmedi",
+	"field.users.empty.single": "No user selected yet",
 
 	"fields.empty": "Henüz alan yok",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Pozisyon değiştir",
 
 	"files": "Dosyalar",
+	"files.delete.confirm.selected": "Do you really want to delete the selected files? This action cannot be undone.",
 	"files.empty": "Henüz dosya yok",
 
 	"filter": "Filtre",
+
+	"form.discard": "Discard changes",
+	"form.discard.confirm": "Do you really want to <strong>discard all your changes</strong>?",
+	"form.locked": "This content is disabled for you as it is currently edited by another user",
+	"form.unsaved": "The current changes have not yet been saved",
+	"form.preview": "Preview changes",
+	"form.preview.draft": "Preview draft",
 
 	"hide": "Gizle",
 	"hour": "Saat",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Sitenizi yayına almaya hazır mısınız?",
 	"license.status.missing.info": "Geçerli lisans yok",
 	"license.status.missing.label": "Lütfen lisansınızı etkinleştirin",
+	"license.status.unknown.info": "The license status is unknown",
+	"license.status.unknown.label": "Unknown",
 	"license.manage": "Lisanslarınızı yönetin",
 	"license.purchased": "Satın alındı",
 	"license.success": "Kirby'yi desteklediğiniz için teşekkürler",
@@ -456,6 +495,9 @@
 
 	"lock.unsaved": "Kaydedilmemiş değişiklikler",
 	"lock.unsaved.empty": "Daha fazla kaydedilmemiş değişiklik yok",
+	"lock.unsaved.files": "Unsaved files",
+	"lock.unsaved.pages": "Unsaved pages",
+	"lock.unsaved.users": "Unsaved accounts",
 	"lock.isLocked": "{email} tarafından yapılan kaydedilmemiş değişiklikler",
 	"lock.unlock": "Kilidi Aç",
 	"lock.unlock.submit": "Kaydedilmemiş değişikliklerin kilidini <strong>{email}</strong> ile açın ve üzerine yazın",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "Bu sayfa sadece bağlantı adresi ile erişilebilir",
 
 	"pages": "Sayfalar",
+	"pages.delete.confirm.selected": "Do you really want to delete the selected pages? This action cannot be undone.",
 	"pages.empty": "Henüz sayfa yok",
 	"pages.status.draft": "Taslaklar",
 	"pages.status.listed": "Yayınlandı",
@@ -578,6 +621,10 @@
 	"plugins": "Eklentiler",
 	"prev": "Önceki",
 	"preview": "Önizle",
+
+	"publish": "Publish",
+	"published": "Yayınlandı",
+
 	"remove": "Kaldır",
 	"rename": "Yeniden Adlandır",
 	"renew": "Yenileme",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Hiçkimse",
 
 	"save": "Kaydet",
+	"saved": "Saved",
 	"search": "Arama",
+	"searching": "Searching",
 	"search.min": "Aramak için {min} karakter girin",
 	"search.all": "Tüm {count} sonuçlarını göster",
 	"search.results.none": "Sonuç yok",
@@ -630,7 +679,9 @@
 	"system.issues.git": ".git klasörü açığa çıkmış görünüyor",
 	"system.issues.https": "Tüm siteleriniz için HTTPS'yi öneriyoruz",
 	"system.issues.kirby": "Kirby klasörü açığa çıkmış görünüyor",
+	"system.issues.local": "The site is running locally with relaxed security checks",
 	"system.issues.site": "Site klasörü açığa çıkmış görünüyor",
+	"system.issues.vue.compiler": "The Vue template compiler is enabled",
 	"system.issues.vulnerability.kirby": "Kurulumunuz aşağıdaki güvenlik açığından ({ severity } önem derecesi) etkilenebilir: { description }",
 	"system.issues.vulnerability.plugin": "Kurulumunuz, { plugin } eklentisindeki ({ severity } önem derecesi) aşağıdaki güvenlik açığından etkilenebilir: { description }",
 	"system.updateStatus": "Güncelleme durumu",
@@ -646,6 +697,12 @@
 	"tel": "Telefon",
 	"tel.placeholder": "+49123456789",
 	"template": "\u015eablon",
+
+	"theme": "Theme",
+	"theme.light": "Lights on",
+	"theme.dark": "Lights off",
+	"theme.automatic": "Match system default",
+
 	"title": "Başlık",
 	"today": "Bugün",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Dili değiştir",
 	"user.changeName": "Kullanıcıyı yeniden adlandır",
 	"user.changePassword": "Şifre değiştir",
+	"user.changePassword.current": "Your current password",
 	"user.changePassword.new": "Yeni Şifre",
 	"user.changePassword.new.confirm": "Şifreyi onaylayın...",
 	"user.changeRole": "Rolü değiştir",
@@ -715,10 +773,13 @@
 	"users": "Kullanıcılar",
 
 	"version": "Versiyon",
+	"version.changes": "Changed version",
+	"version.compare": "Compare versions",
 	"version.current": "Mevcut sürüm",
 	"version.latest": "En son sürüm",
 	"versionInformation": "Sürüm bilgisi",
 
+	"view": "View",
 	"view.account": "Hesap Bilgilerin",
 	"view.installation": "Kurulum",
 	"view.languages": "Diller",

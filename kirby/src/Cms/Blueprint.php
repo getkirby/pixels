@@ -25,24 +25,16 @@ use Throwable;
  */
 class Blueprint
 {
-	public static $presets = [];
-	public static $loaded = [];
+	public static array $presets = [];
+	public static array $loaded = [];
 
-	protected $fields = [];
-	protected $model;
-	protected $props;
-	protected $sections = [];
-	protected $tabs = [];
+	protected array $fields = [];
+	protected ModelWithContent $model;
+	protected array $props;
+	protected array $sections = [];
+	protected array $tabs = [];
 
 	protected array|null $fileTemplates = null;
-
-	/**
-	 * Magic getter/caller for any blueprint prop
-	 */
-	public function __call(string $key, array $arguments = null): mixed
-	{
-		return $this->props[$key] ?? null;
-	}
 
 	/**
 	 * Creates a new blueprint object with the given props
@@ -52,11 +44,15 @@ class Blueprint
 	public function __construct(array $props)
 	{
 		if (empty($props['model']) === true) {
-			throw new InvalidArgumentException('A blueprint model is required');
+			throw new InvalidArgumentException(
+				message: 'A blueprint model is required'
+			);
 		}
 
 		if ($props['model'] instanceof ModelWithContent === false) {
-			throw new InvalidArgumentException('Invalid blueprint model');
+			throw new InvalidArgumentException(
+				message: 'Invalid blueprint model'
+			);
 		}
 
 		$this->model = $props['model'];
@@ -89,6 +85,14 @@ class Blueprint
 	}
 
 	/**
+	 * Magic getter/caller for any blueprint prop
+	 */
+	public function __call(string $key, array|null $arguments = null): mixed
+	{
+		return $this->props[$key] ?? null;
+	}
+
+	/**
 	 * Improved `var_dump` output
 	 *
 	 * @codeCoverageIgnore
@@ -102,7 +106,7 @@ class Blueprint
 	 * Gathers what file templates are allowed in
 	 * this model based on the blueprint
 	 */
-	public function acceptedFileTemplates(string $inSection = null): array
+	public function acceptedFileTemplates(string|null $inSection = null): array
 	{
 		// get cached results for the current file model
 		// (except when collecting for a specific section)
@@ -185,7 +189,10 @@ class Blueprint
 
 		foreach ($fieldsets as $fieldset) {
 			foreach (($fieldset['tabs'] ?? []) as $tab) {
-				$templates = array_merge($templates, $this->acceptedFileTemplatesFromFields($tab['fields'] ?? []));
+				$templates = [
+					...$templates,
+					...$this->acceptedFileTemplatesFromFields($tab['fields'] ?? [])
+				];
 			}
 		}
 
@@ -205,6 +212,14 @@ class Blueprint
 		}
 
 		return [($uploads['template'] ?? 'default')];
+	}
+
+	/**
+	 * Gathers custom config for Panel view buttons
+	 */
+	public function buttons(): array|false|null
+	{
+		return $this->props['buttons'] ?? null;
 	}
 
 	/**
@@ -320,7 +335,7 @@ class Blueprint
 	 */
 	public static function factory(
 		string $name,
-		string $fallback = null,
+		string|null $fallback,
 		ModelWithContent $model
 	): static|null {
 		try {
@@ -393,10 +408,10 @@ class Blueprint
 		}
 
 		// neither a valid file nor array data
-		throw new NotFoundException([
-			'key'  => 'blueprint.notFound',
-			'data' => ['name' => $name]
-		]);
+		throw new NotFoundException(
+			key: 'blueprint.notFound',
+			data: ['name' => $name]
+		);
 	}
 
 	/**
@@ -512,14 +527,18 @@ class Blueprint
 		$props = static::extend($props);
 
 		if (isset($props['name']) === false) {
-			throw new InvalidArgumentException('The field name is missing');
+			throw new InvalidArgumentException(
+				message: 'The field name is missing'
+			);
 		}
 
 		$name = $props['name'];
 		$type = $props['type'] ?? $name;
 
 		if ($type !== 'group' && isset(Field::$types[$type]) === false) {
-			throw new InvalidArgumentException('Invalid field type ("' . $type . '")');
+			throw new InvalidArgumentException(
+				message: 'Invalid field type ("' . $type . '")'
+			);
 		}
 
 		// support for nested fields
@@ -714,7 +733,7 @@ class Blueprint
 				$fields = Blueprint::fieldsProps($sectionProps['fields'] ?? []);
 
 				// inject guide fields guide
-				if (empty($fields) === true) {
+				if ($fields === []) {
 					$fields = [
 						$tabName . '-info' => [
 							'label' => 'Fields',

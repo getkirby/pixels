@@ -3,6 +3,7 @@
 namespace Kirby\Cms;
 
 use Kirby\Cms\System\UpdateStatus;
+use Kirby\Content\VersionId;
 use Kirby\Exception\InvalidArgumentException;
 use Kirby\Exception\PermissionException;
 use Kirby\Filesystem\Dir;
@@ -75,14 +76,11 @@ class System
 
 		switch ($folder) {
 			case 'content':
-				return $url . '/' . basename($this->app->site()->storage()->contentFile(
-					'published',
-					'default'
-				));
+				return $url . '/' . basename($this->app->site()->version(VersionId::latest())->contentFile());
 			case 'git':
 				return $url . '/config';
 			case 'kirby':
-				return $url . '/composer.json';
+				return $url . '/LICENSE.md';
 			case 'site':
 				$root  = $this->app->root('site');
 				$files = glob($root . '/blueprints/*.yml');
@@ -192,28 +190,36 @@ class System
 		try {
 			Dir::make($this->app->root('accounts'));
 		} catch (Throwable) {
-			throw new PermissionException('The accounts directory could not be created');
+			throw new PermissionException(
+				message: 'The accounts directory could not be created'
+			);
 		}
 
 		// init /site/sessions
 		try {
 			Dir::make($this->app->root('sessions'));
 		} catch (Throwable) {
-			throw new PermissionException('The sessions directory could not be created');
+			throw new PermissionException(
+				message: 'The sessions directory could not be created'
+			);
 		}
 
 		// init /content
 		try {
 			Dir::make($this->app->root('content'));
 		} catch (Throwable) {
-			throw new PermissionException('The content directory could not be created');
+			throw new PermissionException(
+				message: 'The content directory could not be created'
+			);
 		}
 
 		// init /media
 		try {
 			Dir::make($this->app->root('media'));
 		} catch (Throwable) {
-			throw new PermissionException('The media directory could not be created');
+			throw new PermissionException(
+				message: 'The media directory could not be created'
+			);
 		}
 	}
 
@@ -232,7 +238,7 @@ class System
 	{
 		return
 			$this->is2FA() === true &&
-			in_array('totp', $this->app->auth()->enabledChallenges()) === true;
+			in_array('totp', $this->app->auth()->enabledChallenges(), true) === true;
 	}
 
 	/**
@@ -363,8 +369,8 @@ class System
 	public function php(): bool
 	{
 		return
-			version_compare(PHP_VERSION, '8.1.0', '>=') === true &&
-			version_compare(PHP_VERSION, '8.4.0', '<')  === true;
+			version_compare(PHP_VERSION, '8.2.0', '>=') === true &&
+			version_compare(PHP_VERSION, '8.5.0', '<')  === true;
 	}
 
 	/**
@@ -385,7 +391,7 @@ class System
 	 * @throws \Kirby\Exception\Exception
 	 * @throws \Kirby\Exception\InvalidArgumentException
 	 */
-	public function register(string $license = null, string $email = null): bool
+	public function register(string|null $license = null, string|null $email = null): bool
 	{
 		$license = new License(
 			code: $license,
@@ -403,6 +409,16 @@ class System
 	public function serverSoftware(): string
 	{
 		return $this->app->environment()->get('SERVER_SOFTWARE', '–');
+	}
+
+	/**
+	 * Returns the short version of the detected server software
+	 * @since 4.6.0
+	 */
+	public function serverSoftwareShort(): string
+	{
+		$software = $this->serverSoftware();
+		return strtok($software, ' ');
 	}
 
 	/**

@@ -20,7 +20,9 @@
 	"coordinates": "Koordinaten",
 	"copy": "Kopieren",
 	"copy.all": "Alle kopieren",
-	"copy.success": "{count} kopiert!",
+	"copy.success": "Kopiert",
+	"copy.success.multiple": "{count} kopiert!",
+	"copy.url": "URL kopieren",
 	"create": "Erstellen",
 	"custom": "Benutzerdefiniert",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Ungültiger Cachetyp: \"{type}\"",
 
+	"error.content.lock.delete": "Die Version ist blockiert und kann daher nicht gelöscht werden.",
+	"error.content.lock.move": "Die Ursprungsversion ist blockiert und kann daher nicht gelöscht werden",
+	"error.content.lock.publish": "Die Version wurde bereits veröffentlicht",
+	"error.content.lock.replace": "Die Version ist blockiert und kann daher nicht ersetzt werden",
+	"error.content.lock.update": "Die Version ist blockiert und kann daher nicht geändert werden",
+
+	"error.entries.max.plural": "Bitte füge nicht mehr als {max} Einträge hinzu",
+	"error.entries.max.singular": "Bitte füge nicht mehr als einen Eintrag hinzu",
+	"error.entries.min.plural": "Bitte füge mindestens {min} Einträge hinzu",
+	"error.entries.min.singular": "Bitte füge mindestens einen Eintrag hinzu",
+	"error.entries.supports": "Der Feldtyp \"{type}\" wird im Entries Feld nicht unterstützt.",
+	"error.entries.validation": "Fehler im Feld \"{field}\" in Zeile {index}",
+
 	"error.email.preset.notFound": "Die E-Mailvorlage \"{name}\" wurde nicht gefunden",
 
 	"error.field.converter.invalid": "Ungültiger Konverter:  \"{converter}\"",
+	"error.field.link.options": "Ungültige Optionen: {options}",
 	"error.field.type.missing": "Feld \"{ name }\": Der Feldtyp \"{ type }\" existiert nicht",
 
 	"error.file.changeName.empty": "Bitte gib einen Namen an",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "Die Vorlage für die Datei \"{id}\" kann nicht zu \"{template}\" geändert werden (gültig: \"{blueprints}\")",
 	"error.file.changeTemplate.permission": "Du kannst die Vorlage für die Datei \"{id}\" nicht ändern",
 
+	"error.file.delete.multiple": "Es konnten nicht alle Dateien gelöscht werden. Versuche verbleibende Dateien einzeln zu löschen, um die Ursachen festzustellen.",
 	"error.file.duplicate": "Eine Datei mit dem Dateinamen \"{filename}\" besteht bereits",
 	"error.file.extension.forbidden": "Verbotene Dateiendung \"{extension}\"",
 	"error.file.extension.invalid": "Verbotene Dateiendung \"{extension}\"",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "Bitte gib einen Dateinamen an",
 	"error.file.notFound": "Die Datei \"{filename}\" konnte nicht gefunden werden",
 	"error.file.orientation": "Das Bildformat ist ungültig. Erwartetes Format: \"{orientation}\"",
+	"error.file.sort.permission": "Du darfst die Sortierung für \"{filename}\" nicht ändern.",
 	"error.file.type.forbidden": "Du kannst keinen {type}-Dateien hochladen",
 	"error.file.type.invalid": "Ungültiger Dateityp: {mime}",
 	"error.file.undefined": "Die Datei konnte nicht gefunden werden",
@@ -161,6 +179,7 @@
 	"error.page.delete": "Die Seite \"{slug}\" kann nicht gelöscht werden",
 	"error.page.delete.confirm": "Bitte gib zur Bestätigung den Seitentitel ein",
 	"error.page.delete.hasChildren": "Die Seite hat Unterseiten und kann nicht gelöscht werden",
+	"error.page.delete.multiple": "Es konnten nicht alle Seiten gelöscht werden. Versuche verbleibende Seiten einzeln zu löschen, um die Ursachen festzustellen.",
 	"error.page.delete.permission": "Du kannst die Seite \"{slug}\" nicht löschen",
 	"error.page.draft.duplicate": "Ein Entwurf mit dem URL-Kürzel \"{slug}\" besteht bereits",
 	"error.page.duplicate": "Eine Seite mit dem URL-Kürzel \"{slug}\" besteht bereits",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "Die Seite kann nicht in sich selbst verschoben werden",
 	"error.page.move.directory": "Der Ordner der Seite kann nicht verschoben werden",
 	"error.page.move.duplicate": "Eine Seite mit dem URL-Kürzel \"{slug}\" besteht bereits",
+	"error.page.move.noSections": "Die Seite \"{parent}\" kann nicht ausgewählt werden, weil sie keine Unterseiten haben kann. ",
 	"error.page.move.notFound": "Die verschobene Seite kann nicht gefunden werden",
 	"error.page.move.permission": "Du kannst die Seite \"{slug}\" nicht verschieben",
 	"error.page.move.template": "Die Vorlage \"{template}\" wird nicht als Unterseite von \"{parent}\" akzeptiert",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Überschrift",
 	"field.blocks.heading.text": "Text",
 	"field.blocks.heading.placeholder": "Überschrift …",
+	"field.blocks.figure.back.plain": "Ohne",
+	"field.blocks.figure.back.pattern.light": "Muster (hell)",
+	"field.blocks.figure.back.pattern.dark": "Muster (dunkel)",
 	"field.blocks.image.alt": "Alternativer Text",
 	"field.blocks.image.caption": "Bildunterschrift",
 	"field.blocks.image.crop": "Beschneiden",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "Video-URL",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Möchtest du wirklich alle Einträge löschen?",
+	"field.entries.empty": "Es bestehen keine Einträge.",
+
 	"field.files.empty": "Keine Dateien ausgewählt",
+	"field.files.empty.single": "Keine Dateien ausgewählt",
 
 	"field.layout.change": "Layout ändern",
 	"field.layout.delete": "Layout löschen",
@@ -345,12 +372,14 @@
 	"field.object.empty": "Noch keine Information",
 
 	"field.pages.empty": "Keine Seiten ausgewählt",
+	"field.pages.empty.single": "Keine Seiten ausgewählt",
 
 	"field.structure.delete.confirm": "Willst du diesen Eintrag wirklich l\u00f6schen?",
 	"field.structure.delete.confirm.all": "Möchtest du wirklich alle Einträge löschen?",
 	"field.structure.empty": "Es bestehen keine Eintr\u00e4ge.",
 
 	"field.users.empty": "Keine Accounts ausgewählt",
+	"field.users.empty.single": "Keine Accounts ausgewählt",
 
 	"fields.empty": "Keine Felder",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Position ändern",
 
 	"files": "Dateien",
+	"files.delete.confirm.selected": "Willst du wirklich die ausgewählten Dateien löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
 	"files.empty": "Keine Dateien",
 
 	"filter": "Filter",
+
+	"form.discard": "Änderungen verwerfen",
+	"form.discard.confirm": "Willst du wirklich <strong>alle ungespeicherten Änderungen verwerfen</strong>? ",
+	"form.locked": "Dieser Inhalt ist gesperrt, weil er aktuell von einem anderen Account bearbeitet wird",
+	"form.unsaved": "Die aktuellen Änderungen wurden noch nicht gespeichert",
+	"form.preview": "Änderungsvorschau",
+	"form.preview.draft": "Entwurfsvorschau",
 
 	"hide": "Verbergen",
 	"hour": "Stunde",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Bereit, deine Seite zu veröffentlichen?",
 	"license.status.missing.info": "Keine gültige Lizenz",
 	"license.status.missing.label": "Bitte aktiviere deine Lizenz",
+	"license.status.unknown.info": "Der Lizenzstatus ist unbekannt",
+	"license.status.unknown.label": "Unbekannt",
 	"license.manage": "Verwalte deine Lizenzen",
 	"license.purchased": "Gekauft",
 	"license.success": "Vielen Dank für deine Unterstützung",
@@ -456,6 +495,9 @@
 
 	"lock.unsaved": "Ungespeicherte Änderungen",
 	"lock.unsaved.empty": "Keine ungespeicherten Änderungen",
+	"lock.unsaved.files": "Geänderte Dateien",
+	"lock.unsaved.pages": "Geänderte Seiten",
+	"lock.unsaved.users": "Geänderte Accounts",
 	"lock.isLocked": "Ungespeicherte Änderungen von {email}",
 	"lock.unlock": "Entsperren",
 	"lock.unlock.submit": "Entsperre und überschreibe ungespeicherte Änderungen von <strong>{email}</strong>",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "Die Seite kann nur über die URL aufgerufen werden",
 
 	"pages": "Seiten",
+	"pages.delete.confirm.selected": "Willst du wirklich die ausgewählten Seiten löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
 	"pages.empty": "Keine Seiten",
 	"pages.status.draft": "Entwürfe",
 	"pages.status.listed": "Veröffentlicht",
@@ -578,6 +621,10 @@
 	"plugins": "Plugins",
 	"prev": "Vorheriger Eintrag",
 	"preview": "Vorschau",
+
+	"publish": "Veröffentlichen",
+	"published": "Veröffentlicht",
+
 	"remove": "Entfernen",
 	"rename": "Umbenennen",
 	"renew": "Erneuern",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Niemand",
 
 	"save": "Speichern",
+	"saved": "Gespeichert",
 	"search": "Suchen",
+	"searching": "Suchen",
 	"search.min": "Gib mindestens {min}  Zeichen ein, um zu suchen",
 	"search.all": "Zeige alle {count} Ergebnisse",
 	"search.results.none": "Keine Ergebnisse",
@@ -630,7 +679,9 @@
 	"system.issues.git": "Der .git Ordner scheint öffentlich zugänglich zu sein",
 	"system.issues.https": "Wir empfehlen HTTPS für alle deine Seiten",
 	"system.issues.kirby": "Der kirby Ordner scheint öffentlich zugänglich zu sein",
+	"system.issues.local": "Die Seite läuft lokal mit abgeschwächten Sicherheitschecks",
 	"system.issues.site": "Der site Ordner scheint öffentlich zugänglich zu sein",
+	"system.issues.vue.compiler": "Der Vue Template Compiler ist aktiviert",
 	"system.issues.vulnerability.kirby": "Deine Installation könnte von folgender Sicherheitslücke betroffen sein ({ severity } severity): { description }",
 	"system.issues.vulnerability.plugin": "Deine Installation könnte von folgender Sicherheitslücke im { plugin } Plugin betroffen sein ({ severity } severity): { description }",
 	"system.updateStatus": "Update Status",
@@ -646,6 +697,12 @@
 	"tel": "Telefon",
 	"tel.placeholder": "+49123456789",
 	"template": "Vorlage",
+
+	"theme": "Thema",
+	"theme.light": "Licht an",
+	"theme.dark": "Licht aus",
+	"theme.automatic": "Systemeinstellung übernehmen",
+
 	"title": "Titel",
 	"today": "Heute",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Sprache ändern",
 	"user.changeName": "Account umbenennen",
 	"user.changePassword": "Passwort ändern",
+	"user.changePassword.current": "Dein aktuelles Passwort",
 	"user.changePassword.new": "Neues Passwort",
 	"user.changePassword.new.confirm": "Wiederhole das Passwort …",
 	"user.changeRole": "Rolle ändern",
@@ -715,10 +773,13 @@
 	"users": "Accounts",
 
 	"version": "Version",
+	"version.changes": "Geänderte Version",
+	"version.compare": "Versionen vergleichen",
 	"version.current": "Aktuelle Version",
 	"version.latest": "Neueste Version",
 	"versionInformation": "Informationen zur Version",
 
+	"view": "Ansicht",
 	"view.account": "Dein Account",
 	"view.installation": "Installation",
 	"view.languages": "Sprachen",

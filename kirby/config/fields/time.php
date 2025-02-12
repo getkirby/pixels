@@ -1,6 +1,6 @@
 <?php
 
-use Kirby\Exception\Exception;
+use Kirby\Exception\InvalidArgumentException;
 use Kirby\Toolkit\Date;
 use Kirby\Toolkit\I18n;
 
@@ -36,13 +36,13 @@ return [
 		/**
 		 * Latest time, which can be selected/saved (H:i or H:i:s)
 		 */
-		'max' => function (string $max = null): string|null {
+		'max' => function (string|null $max = null): string|null {
 			return Date::optional($max);
 		},
 		/**
 		 * Earliest time, which can be selected/saved (H:i or H:i:s)
 		 */
-		'min' => function (string $min = null): string|null {
+		'min' => function (string|null $min = null): string|null {
 			return Date::optional($min);
 		},
 
@@ -97,27 +97,27 @@ return [
 			$format = 'H:i:s';
 
 			if ($min && $max && $value->isBetween($min, $max) === false) {
-				throw new Exception([
-					'key' => 'validation.time.between',
-					'data' => [
+				throw new InvalidArgumentException(
+					key: 'validation.time.between',
+					data: [
 						'min' => $min->format($format),
 						'max' => $min->format($format)
 					]
-				]);
-			} elseif ($min && $value->isMin($min) === false) {
-				throw new Exception([
-					'key' => 'validation.time.after',
-					'data' => [
-						'time' => $min->format($format),
-					]
-				]);
-			} elseif ($max && $value->isMax($max) === false) {
-				throw new Exception([
-					'key' => 'validation.time.before',
-					'data' => [
-						'time' => $max->format($format),
-					]
-				]);
+				);
+			}
+
+			if ($min && $value->isMin($min) === false) {
+				throw new InvalidArgumentException(
+					key: 'validation.time.after',
+					data: ['time' => $min->format($format)]
+				);
+			}
+
+			if ($max && $value->isMax($max) === false) {
+				throw new InvalidArgumentException(
+					key: 'validation.time.before',
+					data: ['time' => $max->format($format)]
+				);
 			}
 
 			return true;

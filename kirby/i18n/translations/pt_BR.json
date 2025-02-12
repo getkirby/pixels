@@ -21,6 +21,8 @@
 	"copy": "Copiar",
 	"copy.all": "Copiar todos",
 	"copy.success": "{count} copiados!",
+	"copy.success.multiple": "{count} copiados!",
+	"copy.url": "Copiar URL",
 	"create": "Criar",
 	"custom": "Personalizado",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Tipo de cache \"{type}\" inválido",
 
+	"error.content.lock.delete": "A versão está bloqueada e não pode ser eliminada",
+	"error.content.lock.move": "A versão está bloqueada e não pode ser movida",
+	"error.content.lock.publish": "Esta versão já se encontra publicada",
+	"error.content.lock.replace": "A versão está bloqueada e não pode ser substituída",
+	"error.content.lock.update": "A versão está bloqueada e não pode ser atualizada",
+
+	"error.entries.max.plural": "You must not add more than {max} entries",
+	"error.entries.max.singular": "You must not add more than one entry",
+	"error.entries.min.plural": "You must add at least {min} entries",
+	"error.entries.min.singular": "You must add at least one entry",
+	"error.entries.supports": "\"{type}\" field type is not supported for the entries field",
+	"error.entries.validation": "Existe um erro no campo \"{field}\" na linha {index}",
+
 	"error.email.preset.notFound": "Pré-configuração de email \"{name}\" não foi encontrada",
 
 	"error.field.converter.invalid": "Conversor \"{converter}\" inválido",
+	"error.field.link.options": "Invalid options: {options}",
 	"error.field.type.missing": "Campo \"{name}\": O tipo de campo \"{type}\" não existe",
 
 	"error.file.changeName.empty": "O nome não deve ficar em branco",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "O template para o ficheiro \"{id}\" não pode ser alterado para \"{template}\" (válido: \"{blueprints}\")",
 	"error.file.changeTemplate.permission": "Não tem permissão para alterar o template do ficheiro \"{id}\"",
 
+	"error.file.delete.multiple": "Not all files could be deleted. Try each remaining file individually to see the specific error that prevents deletion.",
 	"error.file.duplicate": "Um arquivo com o nome \"{filename}\" já existe",
 	"error.file.extension.forbidden": "Extensão \"{extension}\" não permitida",
 	"error.file.extension.invalid": "Extensão inválida: {extension}",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "O nome do arquivo não pode ficar em branco",
 	"error.file.notFound": "Arquivo \"{filename}\" não encontrado",
 	"error.file.orientation": "A orientação da imagem deve ser “{orientation}”",
+	"error.file.sort.permission": "Não tem permissão para alterar a ordem de \"{filename}\"",
 	"error.file.type.forbidden": "Você não tem permissão para enviar arquivos {type}",
 	"error.file.type.invalid": "Tipo inválido de arquivo: {type}",
 	"error.file.undefined": "Arquivo n\u00e3o encontrado",
@@ -161,6 +179,7 @@
 	"error.page.delete": "A página \"{slug}\" não pode ser deletada",
 	"error.page.delete.confirm": "Por favor, digite o título da página para confirmar",
 	"error.page.delete.hasChildren": "A página possui subpáginas e não pode ser deletada",
+	"error.page.delete.multiple": "Not all pages could be deleted. Try each remaining page individually to see the specific error that prevents deletion.",
 	"error.page.delete.permission": "Você não tem permissão para deletar \"{slug}\"",
 	"error.page.draft.duplicate": "Uma página rascunho com um anexo de URL \"{slug}\" já existe",
 	"error.page.duplicate": "Uma página com o anexo de URL \"{slug}\" já existe",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "A página não pode ser movida para dentro dela mesma",
 	"error.page.move.directory": "A pasta da página não pode ser movida",
 	"error.page.move.duplicate": "Uma subpágina com o segmento de URL \"{slug}\" já existe",
+	"error.page.move.noSections": "A página \"{parent}\" não pode ser pai de nenhuma página porque não tem secções de páginas na sua blueprint",
 	"error.page.move.notFound": "A página movida não foi encontrada",
 	"error.page.move.permission": "Não tem permissão para mover \"{slug}\"",
 	"error.page.move.template": "O template \"{template}\" não é aceite como subpágina de \"{parent}\"",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Título ",
 	"field.blocks.heading.text": "Texto",
 	"field.blocks.heading.placeholder": "Título …",
+	"field.blocks.figure.back.plain": "Simples",
+	"field.blocks.figure.back.pattern.light": "Padrão (claro)",
+	"field.blocks.figure.back.pattern.dark": "Padrão (escuro)",
 	"field.blocks.image.alt": "Texto alternativo",
 	"field.blocks.image.caption": "Legenda",
 	"field.blocks.image.crop": "Cortar",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "URL-Vídeo",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Tem a certeza que pretende eliminar todos os registos?",
+	"field.entries.empty": "Nenhum registro",
+
 	"field.files.empty": "Nenhum arquivo selecionado",
+	"field.files.empty.single": "Nenhum ficheiro selecionado ainda",
 
 	"field.layout.change": "Alterar layout",
 	"field.layout.delete": "Deletar layout",
@@ -345,12 +372,14 @@
 	"field.object.empty": "Nenhuma informação ainda",
 
 	"field.pages.empty": "Nenhuma página selecionada",
+	"field.pages.empty.single": "Nenhuma página selecionada ainda",
 
 	"field.structure.delete.confirm": "Deseja realmente deletar esta linha?",
 	"field.structure.delete.confirm.all": "Tem a certeza que pretende eliminar todos os registos?",
 	"field.structure.empty": "Nenhum registro",
 
 	"field.users.empty": "Nenhum usuário selecionado",
+	"field.users.empty.single": "Nenhum utilizador selecionado ainda",
 
 	"fields.empty": "Nenhum campo ainda",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Mudar posição",
 
 	"files": "Arquivos",
+	"files.delete.confirm.selected": "Do you really want to delete the selected files? This action cannot be undone.",
 	"files.empty": "Nenhum arquivo",
 
 	"filter": "Filtro",
+
+	"form.discard": "Reverter alterações",
+	"form.discard.confirm": "Tem a certeza que pretende reverter <strong>todas as suas alterações</strong>?",
+	"form.locked": "Este conteúdo está desativado para si porque encontra-se a ser editado por outro utilizador",
+	"form.unsaved": "As alterações atuais ainda não foram guardadas",
+	"form.preview": "Pré-visualizar alterações",
+	"form.preview.draft": "Pré-visualizar rascunho",
 
 	"hide": "Ocultar",
 	"hour": "Hora",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Pronto para lançar o seu site?",
 	"license.status.missing.info": "Nenhuma licença válida",
 	"license.status.missing.label": "Por favor, ative a sua licença",
+	"license.status.unknown.info": "O estado da licença é desconhecido",
+	"license.status.unknown.label": "Unknown",
 	"license.manage": "Gerir as suas licenças",
 	"license.purchased": "Compradas",
 	"license.success": "Obrigado por apoiar o Kirby",
@@ -456,6 +495,9 @@
 
 	"lock.unsaved": "Mudanças não salvas",
 	"lock.unsaved.empty": "Não há mais mudanças não salvas",
+	"lock.unsaved.files": "Ficheiros não guardados",
+	"lock.unsaved.pages": "Páginas não guardadas",
+	"lock.unsaved.users": "Contas não guardadas",
 	"lock.isLocked": "Alterações não guardadas de {email}",
 	"lock.unlock": "Destrancar",
 	"lock.unlock.submit": "Desbloqueie e substitua alterações não guardadas de <strong>{email}</strong>",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "Esta página é acessível somente através da URL",
 
 	"pages": "Páginas",
+	"pages.delete.confirm.selected": "Do you really want to delete the selected pages? This action cannot be undone.",
 	"pages.empty": "Nenhuma página",
 	"pages.status.draft": "Rascunhos",
 	"pages.status.listed": "Publicadas",
@@ -578,6 +621,10 @@
 	"plugins": "Plugins",
 	"prev": "Anterior",
 	"preview": "Visualizar",
+
+	"publish": "Publicar",
+	"published": "Publicadas",
+
 	"remove": "Remover",
 	"rename": "Renomear",
 	"renew": "Renovar",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Ninguém",
 
 	"save": "Salvar",
+	"saved": "Guardado",
 	"search": "Buscar",
+	"searching": "À procura",
 	"search.min": "Digite {min} caracteres para fazer uma busca",
 	"search.all": "Mostrar todos os {count} resultados",
 	"search.results.none": "Nenhum resultado",
@@ -630,7 +679,9 @@
 	"system.issues.git": "A pasta \".git\" parece não estar protegida",
 	"system.issues.https": "Nós recomendamos HTTPS para todos os seus sites",
 	"system.issues.kirby": "A pasta \"kirby\" parece não estar protegida",
+	"system.issues.local": "The site is running locally with relaxed security checks",
 	"system.issues.site": "A pasta \"site\" parece não estar protegida",
+	"system.issues.vue.compiler": "The Vue template compiler is enabled",
 	"system.issues.vulnerability.kirby": "A sua instalação poderá ser afetada pela seguinte vulnerabilidade ({ severity } gravidade): { description }",
 	"system.issues.vulnerability.plugin": "A sua instalação poderá ser afetada pela seguinte vulnerabilidade no plugin { plugin } ({ severity } gravidade): { description }",
 	"system.updateStatus": "Atualizar estado",
@@ -646,6 +697,12 @@
 	"tel": "Telefone",
 	"tel.placeholder": "+351 123456789",
 	"template": "Tema",
+
+	"theme": "Tema",
+	"theme.light": "Luzes ligadas",
+	"theme.dark": "Luzes desligadas",
+	"theme.automatic": "Ajustar ao tema do sistema",
+
 	"title": "Título",
 	"today": "Hoje",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Alterar idioma",
 	"user.changeName": "Renomear usuário",
 	"user.changePassword": "Alterar senha",
+	"user.changePassword.current": "Your current password",
 	"user.changePassword.new": "Nova senha",
 	"user.changePassword.new.confirm": "Confirme a nova senha…",
 	"user.changeRole": "Alterar papel",
@@ -715,10 +773,13 @@
 	"users": "Usuários",
 
 	"version": "Vers\u00e3o do Kirby",
+	"version.changes": "Versão alterada",
+	"version.compare": "Comparar versões",
 	"version.current": "Versão atual",
 	"version.latest": "Versão mais recente",
 	"versionInformation": "Informação da versão",
 
+	"view": "Visualizar",
 	"view.account": "Sua conta",
 	"view.installation": "Instala\u00e7\u00e3o",
 	"view.languages": "Idiomas",

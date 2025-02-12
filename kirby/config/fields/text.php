@@ -10,11 +10,14 @@ return [
 		 * The field value will be converted with the selected converter before the value gets saved. Available converters: `lower`, `upper`, `ucfirst`, `slug`
 		 */
 		'converter' => function ($value = null) {
-			if ($value !== null && array_key_exists($value, $this->converters()) === false) {
-				throw new InvalidArgumentException([
-					'key'  => 'field.converter.invalid',
-					'data' => ['converter' => $value]
-				]);
+			if (
+				$value !== null &&
+				array_key_exists($value, $this->converters()) === false
+			) {
+				throw new InvalidArgumentException(
+					key: 'field.converter.invalid',
+					data: ['converter' => $value]
+				);
 			}
 
 			return $value;
@@ -30,28 +33,28 @@ return [
 		/**
 		 * Sets the font family (sans or monospace)
 		 */
-		'font' => function (string $font = null) {
+		'font' => function (string|null $font = null) {
 			return $font === 'monospace' ? 'monospace' : 'sans-serif';
 		},
 
 		/**
 		 * Maximum number of allowed characters
 		 */
-		'maxlength' => function (int $maxlength = null) {
+		'maxlength' => function (int|null $maxlength = null) {
 			return $maxlength;
 		},
 
 		/**
 		 * Minimum number of required characters
 		 */
-		'minlength' => function (int $minlength = null) {
+		'minlength' => function (int|null $minlength = null) {
 			return $minlength;
 		},
 
 		/**
 		 * A regular expression, which will be used to validate the input
 		 */
-		'pattern' => function (string $pattern = null) {
+		'pattern' => function (string|null $pattern = null) {
 			return $pattern;
 		},
 

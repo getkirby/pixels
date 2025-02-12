@@ -21,6 +21,8 @@
 	"copy": "Kopírovat",
 	"copy.all": "Kopírovat vše",
 	"copy.success": "{count} zkopírováno!",
+	"copy.success.multiple": "{count} copied!",
+	"copy.url": "Kopírovat URL",
 	"create": "Vytvořit",
 	"custom": "Vlastní",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Neplatný typ cache \"{type}\"",
 
+	"error.content.lock.delete": "Tato verze je uzamčená a nelze jí smazat",
+	"error.content.lock.move": "The source version is locked and cannot be moved",
+	"error.content.lock.publish": "Tato verze je již zveřejněná",
+	"error.content.lock.replace": "The version is locked and cannot be replaced",
+	"error.content.lock.update": "The version is locked and cannot be updated",
+
+	"error.entries.max.plural": "You must not add more than {max} entries",
+	"error.entries.max.singular": "You must not add more than one entry",
+	"error.entries.min.plural": "You must add at least {min} entries",
+	"error.entries.min.singular": "You must add at least one entry",
+	"error.entries.supports": "\"{type}\" field type is not supported for the entries field",
+	"error.entries.validation": "Chyba v poli \"{field}\" na řádku {index}",
+
 	"error.email.preset.notFound": "Nelze nalézt emailové přednastavení \"{name}\"",
 
 	"error.field.converter.invalid": "Neplatný konvertor \"{converter}\"",
+	"error.field.link.options": "Invalid options: {options}",
 	"error.field.type.missing": "Pole \"{ name }\": Typ pole \"{ type }\" neexistuje",
 
 	"error.file.changeName.empty": "Toto jméno nesmí být prázdné",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "Šablonu souboru \"{id}\" nelze změnit na \"{template}\" (platné: \"{blueprints}\")",
 	"error.file.changeTemplate.permission": "Nemáte dovoleno změnit šablonu souboru \"{id}\"",
 
+	"error.file.delete.multiple": "Not all files could be deleted. Try each remaining file individually to see the specific error that prevents deletion.",
 	"error.file.duplicate": "Soubor s názvem \"{filename}\" již existuje",
 	"error.file.extension.forbidden": "Přípona souboru \"{extension}\" není povolena",
 	"error.file.extension.invalid": "Neplatná přípona souboru: {extension}",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "Název souboru nesmí být prázdný",
 	"error.file.notFound": "Soubor se nepoda\u0159ilo nal\u00e9zt",
 	"error.file.orientation": "Orientace obrázku másí být \"{orientation}\"",
+	"error.file.sort.permission": "You are not allowed to change the sorting of \"{filename}\"",
 	"error.file.type.forbidden": "Nemáte povoleno nahrávat soubory typu {type} ",
 	"error.file.type.invalid": "Neplatný typ souboru: {type}",
 	"error.file.undefined": "Soubor se nepoda\u0159ilo nal\u00e9zt",
@@ -161,6 +179,7 @@
 	"error.page.delete": "Stránku \"{slug}\" nelze vymazat",
 	"error.page.delete.confirm": "Pro potvrzení prosím zadejte titulek stránky",
 	"error.page.delete.hasChildren": "Stránka má podstránky, nemůže být vymazána",
+	"error.page.delete.multiple": "Not all pages could be deleted. Try each remaining page individually to see the specific error that prevents deletion.",
 	"error.page.delete.permission": "Nemáte dovoleno odstranit \"{slug}\"",
 	"error.page.draft.duplicate": "Koncept stránky, který obsahuje v adrese URL \"{slug}\" již existuje ",
 	"error.page.duplicate": "Stránka, která v adrese URL obsahuje \"{slug}\" již existuje",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "Stránka nemůže být přesunuta sama do sebe",
 	"error.page.move.directory": "Adresář stránky nelze přesunout",
 	"error.page.move.duplicate": "Podstránka s URL \"{slug}\" již existuje",
+	"error.page.move.noSections": "The page \"{parent}\" cannot be a parent of any page because it lacks any pages sections in its blueprint",
 	"error.page.move.notFound": "Přesunutá stránka nebyla nalezena",
 	"error.page.move.permission": "Nemáte dovoleno přesunout stránku \"{slug}\"",
 	"error.page.move.template": "Šablonu \"{template}\" nelze použít pro podstránku \"{parent}\"",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Nadpis",
 	"field.blocks.heading.text": "Text",
 	"field.blocks.heading.placeholder": "Nadpis …",
+	"field.blocks.figure.back.plain": "Plain",
+	"field.blocks.figure.back.pattern.light": "Pattern (light)",
+	"field.blocks.figure.back.pattern.dark": "Pattern (dark)",
 	"field.blocks.image.alt": "Alternativní text",
 	"field.blocks.image.caption": "Titulek",
 	"field.blocks.image.crop": "Oříznout",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "URL adresa videa",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Opravdu chcete smazat všechny záznamy?",
+	"field.entries.empty": "Zatím nejsou žádné záznamy.",
+
 	"field.files.empty": "Nebyly zatím vybrány žádné soubory",
+	"field.files.empty.single": "No file selected yet",
 
 	"field.layout.change": "Změnit rozvržení",
 	"field.layout.delete": "Smazat rozvržení",
@@ -345,12 +372,14 @@
 	"field.object.empty": "Zatím žádná informace",
 
 	"field.pages.empty": "Nebyly zatím vybrány žádné stránky",
+	"field.pages.empty.single": "No page selected yet",
 
 	"field.structure.delete.confirm": "Opravdu chcete smazat tento z\u00e1znam?",
 	"field.structure.delete.confirm.all": "Opravdu chcete smazat všechny záznamy?",
 	"field.structure.empty": "Zat\u00edm nejsou \u017e\u00e1dn\u00e9 z\u00e1znamy.",
 
 	"field.users.empty": "Nebyli zatím vybráni žádní uživatelé",
+	"field.users.empty.single": "No user selected yet",
 
 	"fields.empty": "Zatím žádné pole",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Změnit pozici",
 
 	"files": "Soubory",
+	"files.delete.confirm.selected": "Do you really want to delete the selected files? This action cannot be undone.",
 	"files.empty": "Zatím žádné soubory",
 
 	"filter": "Filtr",
+
+	"form.discard": "Discard changes",
+	"form.discard.confirm": "Do you really want to <strong>discard all your changes</strong>?",
+	"form.locked": "This content is disabled for you as it is currently edited by another user",
+	"form.unsaved": "The current changes have not yet been saved",
+	"form.preview": "Náhled změn",
+	"form.preview.draft": "Náhled konceptu",
 
 	"hide": "Skrýt",
 	"hour": "Hodina",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Vše připraveno na spuštění vaši stránky?",
 	"license.status.missing.info": "Žádlná platná licence",
 	"license.status.missing.label": "Prosím aktivute svoji licenci",
+	"license.status.unknown.info": "Status licence je neznámý",
+	"license.status.unknown.label": "Unknown",
 	"license.manage": "Spravovat licence",
 	"license.purchased": "Zakoupeno",
 	"license.success": "Děkujeme Vám za podporu Kirby",
@@ -456,6 +495,9 @@
 
 	"lock.unsaved": "Neuložené změny",
 	"lock.unsaved.empty": "Nezbývají již žádné neuložené změny.",
+	"lock.unsaved.files": "Neuložené soubory",
+	"lock.unsaved.pages": "Neuložené stránky",
+	"lock.unsaved.users": "Neuložené účty",
 	"lock.isLocked": "Neuložené změny od {email}",
 	"lock.unlock": "Odemknout",
 	"lock.unlock.submit": "Odemknout a přepsat neuložené změny od <strong>{email}</strong>",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "Tato stránka je dostupná pouze přes URL.",
 
 	"pages": "Stránky",
+	"pages.delete.confirm.selected": "Do you really want to delete the selected pages? This action cannot be undone.",
 	"pages.empty": "Zatím žádné stránky",
 	"pages.status.draft": "Koncepty",
 	"pages.status.listed": "Zveřejněno",
@@ -578,6 +621,10 @@
 	"plugins": "Doplňky",
 	"prev": "Předchozí",
 	"preview": "Náhled",
+
+	"publish": "Zveřejnit",
+	"published": "Zveřejněno",
+
 	"remove": "Odstranit",
 	"rename": "Přejmenovat",
 	"renew": "Obnovit",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Nikdo",
 
 	"save": "Ulo\u017eit",
+	"saved": "Uloženo",
 	"search": "Hledat",
+	"searching": "Hledání",
 	"search.min": "Pro vyhledání zadejte alespoň {min} znaky",
 	"search.all": "Zobrazit všech {count} výsledků",
 	"search.results.none": "Žádné výsledky",
@@ -630,7 +679,9 @@
 	"system.issues.git": "Složka .git je zřejmě přístupná zvenčí",
 	"system.issues.https": "Pro všechny stránky doporučujeme používat protokol HTTPS",
 	"system.issues.kirby": "Složka kirby je zřejmě přístupná zvenčí",
+	"system.issues.local": "The site is running locally with relaxed security checks",
 	"system.issues.site": "Složka site je zřejmě přístupná zvenčí",
+	"system.issues.vue.compiler": "The Vue template compiler is enabled",
 	"system.issues.vulnerability.kirby": "Vaše instalace může být ovlivněna následující zranitelností (stupeň vážnosti - { severity }): { description }",
 	"system.issues.vulnerability.plugin": "Vaše instalace může být ovlivněna následující zranitelností v doplňku { plugin } (stupeň vážnosti - { severity }): { description }",
 	"system.updateStatus": "Status aktualizací",
@@ -646,6 +697,12 @@
 	"tel": "Telefon",
 	"tel.placeholder": "+49123456789",
 	"template": "\u0160ablona",
+
+	"theme": "Motiv",
+	"theme.light": "Lights on",
+	"theme.dark": "Lights off",
+	"theme.automatic": "Podle nastavení systému",
+
 	"title": "Název",
 	"today": "Dnes",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Změnit jazyk",
 	"user.changeName": "Přejmenovat tohoto uživatele",
 	"user.changePassword": "Změnit heslo",
+	"user.changePassword.current": "Your current password",
 	"user.changePassword.new": "Nové heslo",
 	"user.changePassword.new.confirm": "Potvrdit nové heslo...",
 	"user.changeRole": "Změnit roli",
@@ -715,10 +773,13 @@
 	"users": "Uživatelé",
 
 	"version": "Verze Kirby",
+	"version.changes": "Změnit verzi",
+	"version.compare": "Porovnat verze",
 	"version.current": "Současná verze",
 	"version.latest": "Poslední verze",
 	"versionInformation": "Informace o verzi",
 
+	"view": "View",
 	"view.account": "V\u00e1\u0161 \u00fa\u010det",
 	"view.installation": "Instalace",
 	"view.languages": "Jazyky",

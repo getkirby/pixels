@@ -17,7 +17,7 @@ return [
 		/**
 		 * Overwrites manual sorting and sorts by the given field and sorting direction (i.e. `date desc`)
 		 */
-		'sortBy' => function (string $sortBy = null) {
+		'sortBy' => function (string|null $sortBy = null) {
 			return $sortBy;
 		},
 	],
@@ -29,7 +29,7 @@ return [
 
 			if (
 				$this->type === 'pages' &&
-				in_array($this->status, ['listed', 'published', 'all']) === false
+				in_array($this->status, ['listed', 'published', 'all'], true) === false
 			) {
 				return false;
 			}

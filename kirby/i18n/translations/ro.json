@@ -21,6 +21,8 @@
 	"copy": "Copiază",
 	"copy.all": "Copiază toate",
 	"copy.success": "Copiat {count}!",
+	"copy.success.multiple": "Copiat {count}!",
+	"copy.url": "Copy URL",
 	"create": "Creează",
 	"custom": "Personalizat",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Tipul de cache \"{type}\" este nevalid",
 
+	"error.content.lock.delete": "The version is locked and cannot be deleted",
+	"error.content.lock.move": "The source version is locked and cannot be moved",
+	"error.content.lock.publish": "This version is already published",
+	"error.content.lock.replace": "The version is locked and cannot be replaced",
+	"error.content.lock.update": "The version is locked and cannot be updated",
+
+	"error.entries.max.plural": "You must not add more than {max} entries",
+	"error.entries.max.singular": "You must not add more than one entry",
+	"error.entries.min.plural": "You must add at least {min} entries",
+	"error.entries.min.singular": "You must add at least one entry",
+	"error.entries.supports": "\"{type}\" field type is not supported for the entries field",
+	"error.entries.validation": "Există o eroare la câmpul \"{field}\" pe rândul {index}",
+
 	"error.email.preset.notFound": "Preset-ul de e-mail \"{name}\" nu a fost găsit",
 
 	"error.field.converter.invalid": "Convertorul \"{converter}\" nu este valid",
+	"error.field.link.options": "Invalid options: {options}",
 	"error.field.type.missing": "Câmpul \"{ name }\": Tipul de câmp \"{ type }\" nu există",
 
 	"error.file.changeName.empty": "Numele nu trebuie să fie gol",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "Șablonul pentru fișierul \"{id}\" nu poate fi schimbat la \"{template}\" (valide: \"{blueprints}\")",
 	"error.file.changeTemplate.permission": "Nu ai voie să schimbi șablonul pentru fișierul \"{id}\"",
 
+	"error.file.delete.multiple": "Not all files could be deleted. Try each remaining file individually to see the specific error that prevents deletion.",
 	"error.file.duplicate": "Există deja un fișier cu numele \"{filename}\"",
 	"error.file.extension.forbidden": "Extensia de fișier \"{extension}\" nu este permisă",
 	"error.file.extension.invalid": "Extensie de fișier nevalidă: {extension}",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "Numele fișierului nu poate fi gol",
 	"error.file.notFound": "Fișierul \"{filename}\" nu a fost găsit",
 	"error.file.orientation": "Orientarea imaginii trebuie să fie \"{orientation}\"",
+	"error.file.sort.permission": "You are not allowed to change the sorting of \"{filename}\"",
 	"error.file.type.forbidden": "Nu ai voie să încarci fișiere {type}",
 	"error.file.type.invalid": "Tip nevalid de fișier: {type}",
 	"error.file.undefined": "Fișierul nu a fost găsit",
@@ -161,6 +179,7 @@
 	"error.page.delete": "Pagina \"{slug}\" nu poate fi ștearsă",
 	"error.page.delete.confirm": "Te rog introdu titlul paginii pentru a confirma",
 	"error.page.delete.hasChildren": "Pagina are subpagini și nu poate fi ștearsă",
+	"error.page.delete.multiple": "Not all pages could be deleted. Try each remaining page individually to see the specific error that prevents deletion.",
 	"error.page.delete.permission": "Nu ai voie să ștergi \"{slug}\"",
 	"error.page.draft.duplicate": "Există deja o ciornă cu apendicele URL \"{slug}\"",
 	"error.page.duplicate": "Există deja o pagină cu apendicele URL \"{slug}\"",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "Pagina nu poate fi mutată în ea însăși",
 	"error.page.move.directory": "Directorul de pagini nu poate fi mutat",
 	"error.page.move.duplicate": "Există deja o sub-pagină cu apendicele URL \"{slug}\"",
+	"error.page.move.noSections": "The page \"{parent}\" cannot be a parent of any page because it lacks any pages sections in its blueprint",
 	"error.page.move.notFound": "Pagina mutată nu a fost găsită",
 	"error.page.move.permission": "Nu ai voie să muți \"{slug}\"",
 	"error.page.move.template": "Șablonul \"{template}\" nu este acceptat ca sub-pagină a \"{parent}\"",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Subtitlu",
 	"field.blocks.heading.text": "Text",
 	"field.blocks.heading.placeholder": "Subtitlu …",
+	"field.blocks.figure.back.plain": "Plain",
+	"field.blocks.figure.back.pattern.light": "Pattern (light)",
+	"field.blocks.figure.back.pattern.dark": "Pattern (dark)",
 	"field.blocks.image.alt": "Text alternativ",
 	"field.blocks.image.caption": "Etichetă",
 	"field.blocks.image.crop": "Decupaj",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "URL-ul video-ului",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Chiar vrei să ștergi toate înregistrările?",
+	"field.entries.empty": "Nicio înregistrare deocamdată",
+
 	"field.files.empty": "Niciun fișier selectat deocamdată",
+	"field.files.empty.single": "No file selected yet",
 
 	"field.layout.change": "Schimbă aranjament",
 	"field.layout.delete": "Șterge aranjamentul",
@@ -345,12 +372,14 @@
 	"field.object.empty": "Nicio informație deocamdată",
 
 	"field.pages.empty": "Nicio pagină aleasă deocamdată",
+	"field.pages.empty.single": "No page selected yet",
 
 	"field.structure.delete.confirm": "Chiar vrei să ștergi acest rând?",
 	"field.structure.delete.confirm.all": "Chiar vrei să ștergi toate înregistrările?",
 	"field.structure.empty": "Nicio înregistrare deocamdată",
 
 	"field.users.empty": "Niciun utilizator ales deocamdată",
+	"field.users.empty.single": "No user selected yet",
 
 	"fields.empty": "Niciun câmp deocamdată",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Schimbă poziția",
 
 	"files": "Fișiere",
+	"files.delete.confirm.selected": "Do you really want to delete the selected files? This action cannot be undone.",
 	"files.empty": "Niciun fișier deocamdată",
 
 	"filter": "Filtru",
+
+	"form.discard": "Discard changes",
+	"form.discard.confirm": "Do you really want to <strong>discard all your changes</strong>?",
+	"form.locked": "This content is disabled for you as it is currently edited by another user",
+	"form.unsaved": "The current changes have not yet been saved",
+	"form.preview": "Preview changes",
+	"form.preview.draft": "Preview draft",
 
 	"hide": "Ascunde",
 	"hour": "Ora",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Sunteți pregătit să lansați site-ul?",
 	"license.status.missing.info": "Licență nevalidă",
 	"license.status.missing.label": "Vă rugăm să activați licența",
+	"license.status.unknown.info": "The license status is unknown",
+	"license.status.unknown.label": "Unknown",
 	"license.manage": "Gestionează-ți licențele",
 	"license.purchased": "Achiziționat",
 	"license.success": "Mulțumim că susții Kirby",
@@ -456,6 +495,9 @@
 
 	"lock.unsaved": "Schimbări nesalvate",
 	"lock.unsaved.empty": "Nu mai există nicio schimbare nesalvată",
+	"lock.unsaved.files": "Unsaved files",
+	"lock.unsaved.pages": "Unsaved pages",
+	"lock.unsaved.users": "Unsaved accounts",
 	"lock.isLocked": "Schimbări nesalvate de {email}",
 	"lock.unlock": "Deblochează",
 	"lock.unlock.submit": "Deblochează și suprascrie schimbările nesalvate de <strong>{email}</strong>",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "Pagina este accesibilă doar prin URL",
 
 	"pages": "Pagini",
+	"pages.delete.confirm.selected": "Do you really want to delete the selected pages? This action cannot be undone.",
 	"pages.empty": "Nicio pagină deocamdată",
 	"pages.status.draft": "Ciorne",
 	"pages.status.listed": "Publicate",
@@ -578,6 +621,10 @@
 	"plugins": "Plugin-uri",
 	"prev": "Precedenta",
 	"preview": "Previzualizează",
+
+	"publish": "Publish",
+	"published": "Publicate",
+
 	"remove": "Înlătură",
 	"rename": "Redenumește",
 	"renew": "Reînnoiți",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Nimeni",
 
 	"save": "Salveaz\u0103",
+	"saved": "Saved",
 	"search": "Caută",
+	"searching": "Searching",
 	"search.min": "Introdu {min} caractere pentru a căuta",
 	"search.all": "Afișați toate {count} rezultatele",
 	"search.results.none": "Niciun rezultat",
@@ -630,7 +679,9 @@
 	"system.issues.git": "Directorul .git pare să fie expus",
 	"system.issues.https": "Recomandăm HTTPS pentru toate site-urile.",
 	"system.issues.kirby": "Directorul Kirby pare să fie expus",
+	"system.issues.local": "The site is running locally with relaxed security checks",
 	"system.issues.site": "Directorul site pare să fie expus",
+	"system.issues.vue.compiler": "The Vue template compiler is enabled",
 	"system.issues.vulnerability.kirby": "Instalarea ta ar putea fi afectată de următoarea vulnerabilitate ({ severity } severity): { description }",
 	"system.issues.vulnerability.plugin": "Instalarea ta ar putea fi afectată de următoarea vulnerabilitate în plugin-ul { plugin } ({ severity } severity): { description }",
 	"system.updateStatus": "Starea actualizării",
@@ -646,6 +697,12 @@
 	"tel": "Telefon",
 	"tel.placeholder": "+40123456789",
 	"template": "Șablon",
+
+	"theme": "Theme",
+	"theme.light": "Lights on",
+	"theme.dark": "Lights off",
+	"theme.automatic": "Match system default",
+
 	"title": "Titlu",
 	"today": "Astăzi",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Schimbă limba",
 	"user.changeName": "Redenumește acest utilizator",
 	"user.changePassword": "Schimbă parola",
+	"user.changePassword.current": "Your current password",
 	"user.changePassword.new": "Parola nouă",
 	"user.changePassword.new.confirm": "Confirmă parola nouă...",
 	"user.changeRole": "Schimbă rolul",
@@ -715,10 +773,13 @@
 	"users": "Utilizatori",
 
 	"version": "Versiune",
+	"version.changes": "Changed version",
+	"version.compare": "Compare versions",
 	"version.current": "Versiunea curentă",
 	"version.latest": "Ultima versiune",
 	"versionInformation": "Informații despre versiune",
 
+	"view": "View",
 	"view.account": "Contul t\u0103u",
 	"view.installation": "Instalare",
 	"view.languages": "Limbi",

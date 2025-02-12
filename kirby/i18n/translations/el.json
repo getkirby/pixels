@@ -20,7 +20,9 @@
 	"coordinates": "Coordinates",
 	"copy": "Αντιγραφή",
 	"copy.all": "Copy all",
-	"copy.success": "{count} copied!",
+	"copy.success": "Copied",
+	"copy.success.multiple": "{count} copied!",
+	"copy.url": "Copy URL",
 	"create": "Δημιουργία",
 	"custom": "Custom",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Invalid cache type \"{type}\"",
 
+	"error.content.lock.delete": "The version is locked and cannot be deleted",
+	"error.content.lock.move": "The source version is locked and cannot be moved",
+	"error.content.lock.publish": "This version is already published",
+	"error.content.lock.replace": "The version is locked and cannot be replaced",
+	"error.content.lock.update": "The version is locked and cannot be updated",
+
+	"error.entries.max.plural": "You must not add more than {max} entries",
+	"error.entries.max.singular": "You must not add more than one entry",
+	"error.entries.min.plural": "You must add at least {min} entries",
+	"error.entries.min.singular": "You must add at least one entry",
+	"error.entries.supports": "\"{type}\" field type is not supported for the entries field",
+	"error.entries.validation": "There's an error on the \"{field}\" field in row {index}",
+
 	"error.email.preset.notFound": "Δεν είναι δυνατή η εύρεση της προεπιλογής διεύθινσης ηλεκτρονικού ταχυδρομείου \"{name}\"",
 
 	"error.field.converter.invalid": "Μη έγκυρος μετατροπέας \"{converter}\"",
+	"error.field.link.options": "Invalid options: {options}",
 	"error.field.type.missing": "Field \"{ name }\": The field type \"{ type }\" does not exist",
 
 	"error.file.changeName.empty": "The name must not be empty",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "The template for the file \"{id}\" cannot be changed to \"{template}\" (valid: \"{blueprints}\")",
 	"error.file.changeTemplate.permission": "You are not allowed to change the template for the file \"{id}\"",
 
+	"error.file.delete.multiple": "Not all files could be deleted. Try each remaining file individually to see the specific error that prevents deletion.",
 	"error.file.duplicate": "Ένα αρχείο με το όνομα \"{filename}\" υπάρχει ήδη",
 	"error.file.extension.forbidden": "\u039c\u03b7 \u03b1\u03c0\u03bf\u03b4\u03b5\u03ba\u03c4\u03ae \u03b5\u03c0\u03ad\u03ba\u03c4\u03b1\u03c3\u03b7 \u03b1\u03c1\u03c7\u03b5\u03af\u03bf\u03c5",
 	"error.file.extension.invalid": "Invalid extension: {extension}",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "Το όνομα αρχείου δεν μπορεί να είναι άδειο",
 	"error.file.notFound": "Δεν είναι δυνατό να βρεθεί το αρχείο \"{filename}\"",
 	"error.file.orientation": "The orientation of the image must be \"{orientation}\"",
+	"error.file.sort.permission": "You are not allowed to change the sorting of \"{filename}\"",
 	"error.file.type.forbidden": "Δεν επιτρέπεται η μεταφόρτωση αρχείων {type}",
 	"error.file.type.invalid": "Invalid file type: {type}",
 	"error.file.undefined": "Δεν ήταν δυνατή η εύρεση του αρχείου",
@@ -161,6 +179,7 @@
 	"error.page.delete": "Δεν είναι δυνατή η διαγραφή της σελίδας \"{slug}\"",
 	"error.page.delete.confirm": "Παρακαλώ εισάγετε τον τίτλο της σελίδας για επιβεβαίωση",
 	"error.page.delete.hasChildren": "Δεν είναι δυνατή η διαγραφή της σελίδας καθώς περιέχει υποσελίδες",
+	"error.page.delete.multiple": "Not all pages could be deleted. Try each remaining page individually to see the specific error that prevents deletion.",
 	"error.page.delete.permission": "Δεν επιτρέπεται η διαγραφή της σελίδας \"{slug}\"",
 	"error.page.draft.duplicate": "Υπάρχει ήδη ένα προσχέδιο σελίδας με την διεύθυνση URL \"{slug}\"",
 	"error.page.duplicate": "Υπάρχει ήδη μια σελίδα με την διεύθυνση URL \"{slug}\"",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "The page cannot be moved into itself",
 	"error.page.move.directory": "The page directory cannot be moved",
 	"error.page.move.duplicate": "A sub page with the URL appendix \"{slug}\" already exists",
+	"error.page.move.noSections": "The page \"{parent}\" cannot be a parent of any page because it lacks any pages sections in its blueprint",
 	"error.page.move.notFound": "The moved page could not be found",
 	"error.page.move.permission": "You are not allowed to move \"{slug}\"",
 	"error.page.move.template": "The \"{template}\" template is not accepted as a subpage of \"{parent}\"",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Heading",
 	"field.blocks.heading.text": "Text",
 	"field.blocks.heading.placeholder": "Heading …",
+	"field.blocks.figure.back.plain": "Plain",
+	"field.blocks.figure.back.pattern.light": "Pattern (light)",
+	"field.blocks.figure.back.pattern.dark": "Pattern (dark)",
 	"field.blocks.image.alt": "Alternative text",
 	"field.blocks.image.caption": "Caption",
 	"field.blocks.image.crop": "Crop",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "Video-URL",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Do you really want to delete all entries?",
+	"field.entries.empty": "Δεν υπάρχουν ακόμη καταχωρίσεις.",
+
 	"field.files.empty": "Δεν έχουν επιλεγεί αρχεία ακόμα",
+	"field.files.empty.single": "No file selected yet",
 
 	"field.layout.change": "Change layout",
 	"field.layout.delete": "Delete layout",
@@ -345,12 +372,14 @@
 	"field.object.empty": "No information yet",
 
 	"field.pages.empty": "Δεν έχουν επιλεγεί ακόμη σελίδες",
+	"field.pages.empty.single": "No page selected yet",
 
 	"field.structure.delete.confirm": "\u0395\u03af\u03c3\u03c4\u03b5 \u03c3\u03af\u03b3\u03bf\u03c5\u03c1\u03bf\u03c2 \u03cc\u03c4\u03b9 \u03b8\u03ad\u03bb\u03b5\u03c4\u03b5 \u03bd\u03b1 \u03b4\u03b9\u03b1\u03b3\u03c1\u03ac\u03c8\u03b5\u03c4\u03b5 \u03b1\u03c5\u03c4\u03ae\u03bd \u03c4\u03b7\u03bd \u03ba\u03b1\u03c4\u03b1\u03c7\u03ce\u03c1\u03b9\u03c3\u03b7;",
 	"field.structure.delete.confirm.all": "Do you really want to delete all entries?",
 	"field.structure.empty": "\u0394\u03b5\u03bd \u03c5\u03c0\u03ac\u03c1\u03c7\u03bf\u03c5\u03bd \u03b1\u03ba\u03cc\u03bc\u03b7 \u03ba\u03b1\u03c4\u03b1\u03c7\u03c9\u03c1\u03af\u03c3\u03b5\u03b9\u03c2.",
 
 	"field.users.empty": "Δεν έχουν επιλεγεί ακόμη χρήστες",
+	"field.users.empty.single": "No user selected yet",
 
 	"fields.empty": "No fields yet",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Change position",
 
 	"files": "Αρχεία",
+	"files.delete.confirm.selected": "Do you really want to delete the selected files? This action cannot be undone.",
 	"files.empty": "Δεν υπάρχουν ακόμα αρχεία",
 
 	"filter": "Filter",
+
+	"form.discard": "Discard changes",
+	"form.discard.confirm": "Do you really want to <strong>discard all your changes</strong>?",
+	"form.locked": "This content is disabled for you as it is currently edited by another user",
+	"form.unsaved": "The current changes have not yet been saved",
+	"form.preview": "Preview changes",
+	"form.preview.draft": "Preview draft",
 
 	"hide": "Hide",
 	"hour": "Ώρα",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Ready to launch your site?",
 	"license.status.missing.info": "No valid license",
 	"license.status.missing.label": "Please activate your license",
+	"license.status.unknown.info": "The license status is unknown",
+	"license.status.unknown.label": "Unknown",
 	"license.manage": "Manage your licenses",
 	"license.purchased": "Purchased",
 	"license.success": "Σας ευχαριστούμε για την υποστήριξη του Kirby",
@@ -455,7 +494,10 @@
 	"loading": "Φόρτωση",
 
 	"lock.unsaved": "Unsaved changes",
-	"lock.unsaved.empty": "There are no more unsaved changes",
+	"lock.unsaved.empty": "There are no unsaved changes",
+	"lock.unsaved.files": "Unsaved files",
+	"lock.unsaved.pages": "Unsaved pages",
+	"lock.unsaved.users": "Unsaved accounts",
 	"lock.isLocked": "Unsaved changes by {email}",
 	"lock.unlock": "Unlock",
 	"lock.unlock.submit": "Unlock and overwrite unsaved changes by <strong>{email}</strong>",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "Η σελίδα είναι προσβάσιμη μόνο μέσω της διεύθυνσης URL",
 
 	"pages": "Σελίδες",
+	"pages.delete.confirm.selected": "Do you really want to delete the selected pages? This action cannot be undone.",
 	"pages.empty": "Δεν υπάρχουν ακόμα σελίδες",
 	"pages.status.draft": "Προσχέδια",
 	"pages.status.listed": "Δημοσιευμένο",
@@ -578,6 +621,10 @@
 	"plugins": "Plugins",
 	"prev": "Προηγούμενο",
 	"preview": "Preview",
+
+	"publish": "Publish",
+	"published": "Δημοσιευμένο",
+
 	"remove": "Αφαίρεση",
 	"rename": "Μετονομασία",
 	"renew": "Renew",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Nobody",
 
 	"save": "\u0391\u03c0\u03bf\u03b8\u03ae\u03ba\u03b5\u03c5\u03c3\u03b7",
+	"saved": "Saved",
 	"search": "Αναζήτηση",
+	"searching": "Searching",
 	"search.min": "Enter {min} characters to search",
 	"search.all": "Show all {count} results",
 	"search.results.none": "No results",
@@ -630,7 +679,9 @@
 	"system.issues.git": "The .git folder seems to be exposed",
 	"system.issues.https": "We recommend HTTPS for all your sites",
 	"system.issues.kirby": "The kirby folder seems to be exposed",
+	"system.issues.local": "The site is running locally with relaxed security checks",
 	"system.issues.site": "The site folder seems to be exposed",
+	"system.issues.vue.compiler": "The Vue template compiler is enabled",
 	"system.issues.vulnerability.kirby": "Your installation might be affected by the following vulnerability ({ severity } severity): { description }",
 	"system.issues.vulnerability.plugin": "Your installation might be affected by the following vulnerability in the { plugin } plugin ({ severity } severity): { description }",
 	"system.updateStatus": "Update status",
@@ -646,6 +697,12 @@
 	"tel": "Phone",
 	"tel.placeholder": "+49123456789",
 	"template": "\u03a0\u03c1\u03cc\u03c4\u03c5\u03c0\u03bf",
+
+	"theme": "Theme",
+	"theme.light": "Lights on",
+	"theme.dark": "Lights off",
+	"theme.automatic": "Match system default",
+
 	"title": "Τίτλος",
 	"today": "Σήμερα",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Αλλαγή γλώσσας",
 	"user.changeName": "Μετονομασία χρήστη",
 	"user.changePassword": "Αλλαγή κωδικού πρόσβασης",
+	"user.changePassword.current": "Your current password",
 	"user.changePassword.new": "Νέος Κωδικός Πρόσβασης",
 	"user.changePassword.new.confirm": "Επαληθεύση κωδικού πρόσβασης",
 	"user.changeRole": "Αλλαγή ρόλου",
@@ -715,10 +773,13 @@
 	"users": "Χρήστες",
 
 	"version": "\u0388\u03ba\u03b4\u03bf\u03c3\u03b7 Kirby",
+	"version.changes": "Changed version",
+	"version.compare": "Compare versions",
 	"version.current": "Current version",
 	"version.latest": "Latest version",
 	"versionInformation": "Version information",
 
+	"view": "View",
 	"view.account": "\u039f \u03bb\u03bf\u03b3\u03b1\u03c1\u03b9\u03b1\u03c3\u03bc\u03cc\u03c2 \u03c3\u03b1\u03c2",
 	"view.installation": "\u0395\u03b3\u03ba\u03b1\u03c4\u03ac\u03c3\u03c4\u03b1\u03c3\u03b7",
 	"view.languages": "Γλώσσες",

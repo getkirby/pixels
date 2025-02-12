@@ -6,6 +6,7 @@ use Exception;
 use Kirby\Data\Data;
 use Kirby\Filesystem\F;
 use Kirby\Toolkit\I18n;
+use Stringable;
 
 /**
  * Represents a User role with attached
@@ -17,7 +18,7 @@ use Kirby\Toolkit\I18n;
  * @copyright Bastian Allgeier
  * @license   https://getkirby.com/license
  */
-class Role
+class Role implements Stringable
 {
 	protected string|null $description;
 	protected string $name;
@@ -82,7 +83,11 @@ class Role
 
 	public static function factory(array $props, array $inject = []): static
 	{
-		return new static($props + $inject);
+		// ensure to properly extend the blueprint
+		$props = $props + $inject;
+		$props = Blueprint::extend($props);
+
+		return new static($props);
 	}
 
 	public function id(): string
@@ -102,8 +107,10 @@ class Role
 
 	public static function load(string $file, array $inject = []): static
 	{
-		$data = Data::read($file);
-		$data['name'] = F::name($file);
+		$data = [
+			...Data::read($file),
+			'name' => F::name($file)
+		];
 
 		return static::factory($data, $inject);
 	}

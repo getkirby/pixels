@@ -28,11 +28,30 @@ abstract class Model
 	}
 
 	/**
+	 * Returns header button names which should be displayed
+	 */
+	abstract public function buttons(): array;
+
+	/**
 	 * Get the content values for the model
 	 */
 	public function content(): array
 	{
-		return Form::for($this->model)->values();
+		$version = $this->model->version('changes');
+		$changes = [];
+
+		if ($version->exists('current') === true) {
+			$changes = $version->content('current')->toArray();
+		}
+
+		// create a form which will collect the latest values for the model,
+		// but also pass along unpublished changes as overwrites
+		return Form::for(
+			model: $this->model,
+			props: [
+				'values' => $changes
+			]
+		)->values();
 	}
 
 	/**
@@ -63,7 +82,7 @@ abstract class Model
 	 *
 	 * @param string|null $type (`auto`|`kirbytext`|`markdown`)
 	 */
-	public function dragTextType(string|null $type = null): string
+	public function dragTextType(string|null $type = 'auto'): string
 	{
 		$type ??= 'auto';
 
@@ -115,21 +134,28 @@ abstract class Model
 			$blueprint = null;
 		}
 
+		// convert string blueprint settings to proper array
+		if (is_string($blueprint) === true) {
+			$blueprint = ['query' => $blueprint];
+		}
+
 		// skip image thumbnail if option
 		// is explicitly set to show the icon
 		if ($settings === 'icon') {
 			$settings = ['query' => false];
-		} elseif (is_string($settings) === true) {
-			// convert string settings to proper array
+		}
+
+		// convert string settings to proper array
+		if (is_string($settings) === true) {
 			$settings = ['query' => $settings];
 		}
 
 		// merge with defaults and blueprint option
-		$settings = array_merge(
-			$this->imageDefaults(),
-			$settings ?? [],
-			$blueprint ?? [],
-		);
+		$settings = [
+			...$this->imageDefaults(),
+			...$settings ?? [],
+			...$blueprint ?? [],
+		];
 
 		if ($image = $this->imageSource($settings['query'] ?? null)) {
 			// main url
@@ -280,14 +306,12 @@ abstract class Model
 	}
 
 	/**
-	 * Returns lock info for the Panel
-	 *
-	 * @return array|false array with lock info,
-	 *                     false if locking is not supported
+	 * Returns the corresponding model object
+	 * @since 5.0.0
 	 */
-	public function lock(): array|false
+	public function model(): ModelWithContent
 	{
-		return $this->model->lock()?->toArray() ?? false;
+		return $this->model;
 	}
 
 	/**
@@ -301,9 +325,9 @@ abstract class Model
 	{
 		$options = $this->model->permissions()->toArray();
 
-		if ($this->model->isLocked()) {
+		if ($this->model->lock()->isLocked() === true) {
 			foreach ($options as $key => $value) {
-				if (in_array($key, $unlock)) {
+				if (in_array($key, $unlock, true)) {
 					continue;
 				}
 
@@ -312,6 +336,14 @@ abstract class Model
 		}
 
 		return $options;
+	}
+
+	/**
+	 * Get the original content values for the model
+	 */
+	public function originals(): array
+	{
+		return Form::for(model: $this->model)->values();
 	}
 
 	/**
@@ -347,14 +379,22 @@ abstract class Model
 	public function props(): array
 	{
 		$blueprint = $this->model->blueprint();
+		$link      = $this->url(true);
 		$request   = $this->model->kirby()->request();
 		$tabs      = $blueprint->tabs();
 		$tab       = $blueprint->tab($request->get('tab')) ?? $tabs[0] ?? null;
 
 		$props = [
-			'lock'        => $this->lock(),
+			'api'         => $link,
+			'buttons'     => fn () => $this->buttons(),
+			'content'     => (object)$this->content(),
+			'id'          => $this->model->id(),
+			'link'        => $link,
+			'lock'        => $this->model->lock()->toArray(),
+			'originals'   => (object)$this->originals(),
 			'permissions' => $this->model->permissions()->toArray(),
 			'tabs'        => $tabs,
+			'uuid'        => fn () => $this->model->uuid()?->toString()
 		];
 
 		// only send the tab if it exists

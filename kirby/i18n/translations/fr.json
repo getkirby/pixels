@@ -21,6 +21,8 @@
 	"copy": "Copier",
 	"copy.all": "Tout copier",
 	"copy.success": "Copié : {count}",
+	"copy.success.multiple": "Copié : {count}",
+	"copy.url": "Copy URL",
 	"create": "Créer",
 	"custom": "Personnalisé",
 
@@ -90,9 +92,23 @@
 
 	"error.cache.type.invalid": "Type de cache invalide « {type} »",
 
+	"error.content.lock.delete": "The version is locked and cannot be deleted",
+	"error.content.lock.move": "The source version is locked and cannot be moved",
+	"error.content.lock.publish": "This version is already published",
+	"error.content.lock.replace": "The version is locked and cannot be replaced",
+	"error.content.lock.update": "The version is locked and cannot be updated",
+
+	"error.entries.max.plural": "You must not add more than {max} entries",
+	"error.entries.max.singular": "You must not add more than one entry",
+	"error.entries.min.plural": "You must add at least {min} entries",
+	"error.entries.min.singular": "You must add at least one entry",
+	"error.entries.supports": "\"{type}\" field type is not supported for the entries field",
+	"error.entries.validation": "Il y a une erreur dans le champ « {field} » de la rangée {index}",
+
 	"error.email.preset.notFound": "La configuration de courriel « {name} » n’a pu être trouvé ",
 
 	"error.field.converter.invalid": "Convertisseur « {converter} » invalide",
+	"error.field.link.options": "Invalid options: {options}",
 	"error.field.type.missing": "Champ « { name } » : Le type de champ « { type } » n’existe pas",
 
 	"error.file.changeName.empty": "Le nom ne peut être vide",
@@ -100,6 +116,7 @@
 	"error.file.changeTemplate.invalid": "Le modèle du fichier « {id} » ne peut être modifié en « {template} » (valide : « {blueprints} »)",
 	"error.file.changeTemplate.permission": "Vous n’êtes pas autorisé à changer le modèle du fichier « {id} »",
 
+	"error.file.delete.multiple": "Not all files could be deleted. Try each remaining file individually to see the specific error that prevents deletion.",
 	"error.file.duplicate": "Un fichier nommé « {filename} » existe déjà",
 	"error.file.extension.forbidden": "L’extension « {extension} » n’est pas autorisée",
 	"error.file.extension.invalid": "Extension incorrecte : {extension}",
@@ -118,6 +135,7 @@
 	"error.file.name.missing": "Veuillez entrer un titre",
 	"error.file.notFound": "Le fichier « {filename} » n’a pu être trouvé",
 	"error.file.orientation": "L’orientation de l'image doit être « {orientation} »",
+	"error.file.sort.permission": "You are not allowed to change the sorting of \"{filename}\"",
 	"error.file.type.forbidden": "Vous n’êtes pas autorisé à transférer des fichiers {type}",
 	"error.file.type.invalid": "Type de fichier invalide : {type}",
 	"error.file.undefined": "Le fichier n’a pu être trouvé",
@@ -161,6 +179,7 @@
 	"error.page.delete": "La page « {slug} » ne peut être supprimée",
 	"error.page.delete.confirm": "Veuillez saisir le titre de la page pour confirmer",
 	"error.page.delete.hasChildren": "La page comporte des sous-pages et ne peut pas être supprimée",
+	"error.page.delete.multiple": "Not all pages could be deleted. Try each remaining page individually to see the specific error that prevents deletion.",
 	"error.page.delete.permission": "Vous n’êtes pas autorisé à supprimer « {slug} »",
 	"error.page.draft.duplicate": "Un brouillon avec l’identifiant d’URL « {slug} » existe déjà",
 	"error.page.duplicate": "Une page avec l’identifiant d’URL « {slug} » existe déjà",
@@ -168,6 +187,7 @@
 	"error.page.move.ancestor": "La page ne peut être déplacée à l’intérieur d’elle-même",
 	"error.page.move.directory": "Le répertoire de la page ne peut être déplacé",
 	"error.page.move.duplicate": "Une sous-page possédant l’identifiant d’URL « {slug} » existe déjà",
+	"error.page.move.noSections": "The page \"{parent}\" cannot be a parent of any page because it lacks any pages sections in its blueprint",
 	"error.page.move.notFound": "La page déplacée n’a pu être trouvée",
 	"error.page.move.permission": "Vous n’êtes pas autorisé à déplacer « {slug} »  ",
 	"error.page.move.template": "Le modèle « {template} » n’est pas accepté en tant que sous-page de « {parent} »",
@@ -297,6 +317,9 @@
 	"field.blocks.heading.name": "Titre",
 	"field.blocks.heading.text": "Texte",
 	"field.blocks.heading.placeholder": "Titre…",
+	"field.blocks.figure.back.plain": "Plain",
+	"field.blocks.figure.back.pattern.light": "Pattern (light)",
+	"field.blocks.figure.back.pattern.dark": "Pattern (dark)",
 	"field.blocks.image.alt": "Texte alternatif",
 	"field.blocks.image.caption": "Légende",
 	"field.blocks.image.crop": "Recadrer",
@@ -333,7 +356,11 @@
 	"field.blocks.video.url.label": "URL de la vidéo",
 	"field.blocks.video.url.placeholder": "https://youtube.com/?v=",
 
+	"field.entries.delete.confirm.all": "Voulez-vous vraiment supprimer toutes les entrées ?",
+	"field.entries.empty": "Pas encore d’entrée",
+
 	"field.files.empty": "Pas encore de fichier sélectionné",
+	"field.files.empty.single": "No file selected yet",
 
 	"field.layout.change": "Changer de disposition",
 	"field.layout.delete": "Supprimer cette disposition",
@@ -345,12 +372,14 @@
 	"field.object.empty": "Pas encore d‘information",
 
 	"field.pages.empty": "Pas encore de page sélectionnée",
+	"field.pages.empty.single": "No page selected yet",
 
 	"field.structure.delete.confirm": "Voulez-vous vraiment supprimer cette ligne ?",
 	"field.structure.delete.confirm.all": "Voulez-vous vraiment supprimer toutes les entrées ?",
 	"field.structure.empty": "Pas encore d’entrée",
 
 	"field.users.empty": "Pas encore d’utilisateur sélectionné",
+	"field.users.empty.single": "No user selected yet",
 
 	"fields.empty": "Pas encore de champs",
 
@@ -365,9 +394,17 @@
 	"file.sort": "Modifier la position",
 
 	"files": "Fichiers",
+	"files.delete.confirm.selected": "Do you really want to delete the selected files? This action cannot be undone.",
 	"files.empty": "Pas encore de fichier",
 
 	"filter": "Filtrer",
+
+	"form.discard": "Discard changes",
+	"form.discard.confirm": "Do you really want to <strong>discard all your changes</strong>?",
+	"form.locked": "This content is disabled for you as it is currently edited by another user",
+	"form.unsaved": "The current changes have not yet been saved",
+	"form.preview": "Preview changes",
+	"form.preview.draft": "Preview draft",
 
 	"hide": "Masquer",
 	"hour": "Heure",
@@ -444,6 +481,8 @@
 	"license.status.missing.bubble": "Prêt à lancer votre site ?",
 	"license.status.missing.info": "Pas de licence valide",
 	"license.status.missing.label": "Veuillez activer votre licence",
+	"license.status.unknown.info": "The license status is unknown",
+	"license.status.unknown.label": "Unknown",
 	"license.manage": "Gérer vos licences",
 	"license.purchased": "Achetée",
 	"license.success": "Merci pour votre soutien à Kirby",
@@ -456,6 +495,9 @@
 
 	"lock.unsaved": "Modifications non enregistrées",
 	"lock.unsaved.empty": "Il n’y a plus de modifications non enregistrées",
+	"lock.unsaved.files": "Unsaved files",
+	"lock.unsaved.pages": "Unsaved pages",
+	"lock.unsaved.users": "Unsaved accounts",
 	"lock.isLocked": "Modifications non enregistrées par {email}",
 	"lock.unlock": "Déverrouiller",
 	"lock.unlock.submit": "Déverrouiller et écraser les modifications non enregistrées par <strong>{email}</strong>",
@@ -562,6 +604,7 @@
 	"page.status.unlisted.description": "La page est accessible uniquement par son URL",
 
 	"pages": "Pages",
+	"pages.delete.confirm.selected": "Do you really want to delete the selected pages? This action cannot be undone.",
 	"pages.empty": "Pas encore de pages",
 	"pages.status.draft": "Brouillons",
 	"pages.status.listed": "Publié",
@@ -578,6 +621,10 @@
 	"plugins": "Plugins",
 	"prev": "Précédent",
 	"preview": "Prévisualiser",
+
+	"publish": "Publish",
+	"published": "Publié",
+
 	"remove": "Supprimer",
 	"rename": "Renommer",
 	"renew": "Renouveler",
@@ -597,7 +644,9 @@
 	"role.nobody.title": "Personne",
 
 	"save": "Enregistrer",
+	"saved": "Sauvegardé",
 	"search": "Rechercher",
+	"searching": "Searching",
 	"search.min": "Saisissez {min} caractères pour rechercher",
 	"search.all": "Afficher tous les résultats de {count}",
 	"search.results.none": "Pas de résultats",
@@ -630,7 +679,9 @@
 	"system.issues.git": "Le dossier .git semble exposé",
 	"system.issues.https": "Nous recommandons HTTPS pour tous vos sites",
 	"system.issues.kirby": "Le dossier kirby semble exposé",
+	"system.issues.local": "The site is running locally with relaxed security checks",
 	"system.issues.site": "Le dossier site semble exposé",
+	"system.issues.vue.compiler": "The Vue template compiler is enabled",
 	"system.issues.vulnerability.kirby": "Votre installation pourrait être affectée par la vulnérabilité suivante ({ severity } gravité) : { description }",
 	"system.issues.vulnerability.plugin": "Votre installation pourrait être affectée par la vulnérabilité suivante du plugin { plugin } ({ severity } gravité) : { description }",
 	"system.updateStatus": "Statut des mises à jour",
@@ -646,6 +697,12 @@
 	"tel": "Téléphone",
 	"tel.placeholder": "+33123456789",
 	"template": "Modèle",
+
+	"theme": "Theme",
+	"theme.light": "Lights on",
+	"theme.dark": "Lights off",
+	"theme.automatic": "Match system default",
+
 	"title": "Titre",
 	"today": "Aujourd’hui",
 
@@ -704,6 +761,7 @@
 	"user.changeLanguage": "Modifier la langue",
 	"user.changeName": "Renommer cet utilisateur",
 	"user.changePassword": "Modifier le mot de passe",
+	"user.changePassword.current": "Your current password",
 	"user.changePassword.new": "Nouveau mot de passe",
 	"user.changePassword.new.confirm": "Confirmer le nouveau mot de passe…",
 	"user.changeRole": "Modifier le rôle",
@@ -715,10 +773,13 @@
 	"users": "Utilisateurs",
 
 	"version": "Version",
+	"version.changes": "Changed version",
+	"version.compare": "Compare versions",
 	"version.current": "Version actuelle",
 	"version.latest": "Dernière version",
 	"versionInformation": "Informations de version",
 
+	"view": "View",
 	"view.account": "Votre compte",
 	"view.installation": "Installation",
 	"view.languages": "Langues",

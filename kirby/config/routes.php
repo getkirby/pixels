@@ -3,9 +3,9 @@
 use Kirby\Cms\App;
 use Kirby\Cms\LanguageRoutes;
 use Kirby\Cms\Media;
-use Kirby\Cms\PluginAssets;
 use Kirby\Panel\Panel;
 use Kirby\Panel\Plugins;
+use Kirby\Plugin\Assets;
 use Kirby\Toolkit\Str;
 use Kirby\Uuid\Uuid;
 
@@ -33,7 +33,7 @@ return function (App $kirby) {
 			'pattern' => $api . '/(:all)',
 			'method'  => 'ALL',
 			'env'     => 'api',
-			'action'  => function (string $path = null) use ($kirby) {
+			'action'  => function (string|null $path = null) use ($kirby) {
 				if ($kirby->option('api') === false) {
 					return null;
 				}
@@ -71,7 +71,7 @@ return function (App $kirby) {
 				string $hash,
 				string $path
 			) {
-				return PluginAssets::resolve(
+				return Assets::resolve(
 					$provider . '/' . $pluginName,
 					$hash,
 					$path
@@ -125,7 +125,7 @@ return function (App $kirby) {
 			'pattern' => $panel . '/(:all?)',
 			'method'  => 'ALL',
 			'env'     => 'panel',
-			'action'  => function (string $path = null) {
+			'action'  => function (string|null $path = null) {
 				return Panel::router($path);
 			}
 		],

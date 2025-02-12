@@ -2,6 +2,7 @@
 
 namespace Kirby\Image;
 
+use Kirby\Cms\FileVersion;
 use Kirby\Content\Content;
 use Kirby\Exception\LogicException;
 use Kirby\Filesystem\File;
@@ -83,8 +84,8 @@ class Image extends File
 			'image/jp2',
 			'image/png',
 			'image/webp'
-		])) {
-			return $this->dimensions = Dimensions::forImage($this->root);
+		], true)) {
+			return $this->dimensions = Dimensions::forImage($this);
 		}
 
 		if ($this->extension() === 'svg') {
@@ -115,22 +116,29 @@ class Image extends File
 	 */
 	public function html(array $attr = []): string
 	{
+		$model = match (true) {
+			$this->model instanceof FileVersion => $this->model->original(),
+			default                             => $this->model
+		};
+
 		// if no alt text explicitly provided,
 		// try to infer from model content file
 		if (
-			$this->model !== null &&
-			method_exists($this->model, 'content') === true &&
-			$this->model->content() instanceof Content &&
-			$this->model->content()->get('alt')->isNotEmpty() === true
+			$model !== null &&
+			method_exists($model, 'content') === true &&
+			$model->content() instanceof Content &&
+			$model->content()->get('alt')->isNotEmpty() === true
 		) {
-			$attr['alt'] ??= $this->model->content()->get('alt')->value();
+			$attr['alt'] ??= $model->content()->get('alt')->value();
 		}
 
 		if ($url = $this->url()) {
 			return Html::img($url, $attr);
 		}
 
-		throw new LogicException('Calling Image::html() requires that the URL property is not null');
+		throw new LogicException(
+			message: 'Calling Image::html() requires that the URL property is not null'
+		);
 	}
 
 	/**
@@ -170,7 +178,7 @@ class Image extends File
 	 */
 	public function isResizable(): bool
 	{
-		return in_array($this->extension(), static::$resizableTypes) === true;
+		return in_array($this->extension(), static::$resizableTypes, true) === true;
 	}
 
 	/**
@@ -179,7 +187,7 @@ class Image extends File
 	 */
 	public function isViewable(): bool
 	{
-		return in_array($this->extension(), static::$viewableTypes) === true;
+		return in_array($this->extension(), static::$viewableTypes, true) === true;
 	}
 
 	/**
@@ -204,10 +212,11 @@ class Image extends File
 	 */
 	public function toArray(): array
 	{
-		$array = array_merge(parent::toArray(), [
+		$array = [
+			...parent::toArray(),
 			'dimensions' => $this->dimensions()->toArray(),
 			'exif'       => $this->exif()->toArray(),
-		]);
+		];
 
 		ksort($array);
 
