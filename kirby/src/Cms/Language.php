@@ -67,7 +67,7 @@ class Language implements Stringable
 		}
 
 		static::$kirby      = $props['kirby'] ?? null;
-		$this->code         = trim($props['code']);
+		$this->code         = basename(trim($props['code'])); // prevent path traversal
 		$this->default      = ($props['default'] ?? false) === true;
 		$this->direction    = ($props['direction'] ?? null) === 'rtl' ? 'rtl' : 'ltr';
 		$this->name         = trim($props['name'] ?? $this->code);
@@ -230,8 +230,7 @@ class Language implements Stringable
 		// apply before hook
 		$language = $kirby->apply(
 			'language.delete:before',
-			['language' => $this],
-			'language'
+			['language' => $this]
 		);
 
 		// re-validate the language rules after before hook was applied
@@ -306,6 +305,16 @@ class Language implements Stringable
 	}
 
 	/**
+	 * Checks if the language is the same
+	 * as the given language or language code
+	 * @since 5.0.0
+	 */
+	public function is(self|string $language): bool
+	{
+		return $this->code() === static::ensure($language)->code();
+	}
+
+	/**
 	 * Checks if this is the default language
 	 * for the site.
 	 */
@@ -372,6 +381,7 @@ class Language implements Stringable
 	public static function loadRules(string $code): array
 	{
 		$kirby = App::instance();
+		$code  = basename($code); // prevent path traversal
 		$code  = Str::contains($code, '.') ? Str::before($code, '.') : $code;
 		$file  = $kirby->root('i18n:rules') . '/' . $code . '.json';
 
@@ -591,8 +601,7 @@ class Language implements Stringable
 			[
 				'language' => $this,
 				'input'    => $props
-			],
-			'language'
+			]
 		);
 
 		// updated language object
@@ -628,8 +637,7 @@ class Language implements Stringable
 				'newLanguage' => $language,
 				'oldLanguage' => $this,
 				'input'       => $props
-			],
-			'newLanguage'
+			]
 		);
 
 		return $language;
@@ -639,14 +647,19 @@ class Language implements Stringable
 	 * Returns a language variable object
 	 * for the key in the translations array
 	 */
-	public function variable(string $key, bool $decode = false): LanguageVariable
-	{
+	public function variable(
+		string $key,
+		bool $decode = false
+	): LanguageVariable {
 		// allows decoding if base64-url encoded url is sent
 		// for compatibility of different environments
 		if ($decode === true) {
 			$key = rawurldecode(base64_decode($key));
 		}
 
-		return new LanguageVariable($this, $key);
+		return new LanguageVariable(
+			language: $this,
+			key:      $key
+		);
 	}
 }
