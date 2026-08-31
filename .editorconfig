@@ -1,3 +1,11 @@
+# This file is for unifying the coding style for different editors and IDEs
+# editorconfig.org
+
+# PHP PSR-12 Coding Standards
+# https://www.php-fig.org/psr/psr-12/
+
+root = true
+
 [*]
 charset = utf-8
 end_of_line = lf
@@ -9,21 +17,12 @@ trim_trailing_whitespace = true
 indent_size = 4
 insert_final_newline = true
 
-[site/{layouts,snippets,templates}/**.php]
+[site/plugins/*/{snippets,templates}/**.php]
 indent_size = 2
-
-[site/plugins/**/{layouts,snippets,templates}/**.php]
-indent_size = 2
-
-[*.{css,scss,less,js,json,ts,sass,html,hbs,mustache,phtml,html.twig,md,yml}]
-insert_final_newline = true
-
-[*.md]
-indent_style = space
-trim_trailing_whitespace = false
 
 [*.yml]
 indent_style = space
 
-[package.json,.{babelrc,editorconfig,eslintrc,lintstagedrc,stylelintrc}]
+[*.{md,txt}]
 indent_style = space
+trim_trailing_whitespace = false
