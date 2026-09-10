@@ -59,6 +59,7 @@
 						:data-x="settings.position.x"
 						:src="settings.image"
 						:style="{ width: settings.scale + '%' }"
+						decoding="sync"
 					>
 				</div>
 			</template>
